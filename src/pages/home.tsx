@@ -9,8 +9,8 @@ const Home = () => {
           src="/images/thinking.png"
           alt="thinking"
           className="w-[30%]"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 50 }}
+          animate={{ y: 0 }}
           whileInView={{
             y: [-10, 10], // Bounce up and down
           }}
