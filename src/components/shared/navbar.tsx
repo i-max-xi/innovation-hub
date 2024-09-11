@@ -114,18 +114,12 @@ export default function NavbarComponent() {
                 href="tel:0247902288"
                 className="text-[#1A1A1A] font-medium text-sm"
               >
-                054 256 0336
-              </a>{" "}
+                +233 24 790 2288
+              </a>
             </p>
-            <p className="grid gap-5 items-center">
-              <Link
-                className="cursor-pointer flex gap-1 items-center"
-                to="/wishlist"
-              >
-                <Icon icon="mdi:heart-outline" fontSize={24} />
-                <p className="text-[#1A1A1A] font-normal text-sm">Wishlist</p>
-              </Link>
-            </p>
+            <CustomButton className="bg-primary text-white">
+              Request Quotatiom
+            </CustomButton>
           </div>
         </NavbarMenu>
       </Navbar>
