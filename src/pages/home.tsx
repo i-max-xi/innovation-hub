@@ -24,7 +24,7 @@ const Home = () => {
 
         {/* Heading animation */}
         <motion.h1
-          className="text-2xl font-semibold"
+          className="text-lg md:text-2xl  font-semibold"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
