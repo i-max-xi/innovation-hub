@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
+import StatsSection from "./components/home/stats-section";
+import WhyUs from "./components/home/why-us";
+import FancySection from "./components/home/fancy-section";
 
 const Home = () => {
   return (
     <main className="mt-4 md:mt-8">
-      <section className="container h-svh flex flex-col justify-center items-center">
+      <section className="container flex flex-col justify-center items-center">
         {/* Image with entry animation and continuous bounce */}
         <motion.img
           src="/images/thinking.png"
@@ -32,6 +35,9 @@ const Home = () => {
           A journey of a thousand miles...
         </motion.h1>
       </section>
+      <StatsSection />
+      <WhyUs />
+      <FancySection />
     </main>
   );
 };

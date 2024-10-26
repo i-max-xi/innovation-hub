@@ -87,7 +87,7 @@ export default function NavbarComponent() {
               </a>
             </p>
             <CustomButton className="bg-primary text-white">
-              Request Quotatiom
+              Request Quotation
             </CustomButton>
           </NavbarItem>
         </NavbarContent>
@@ -118,7 +118,7 @@ export default function NavbarComponent() {
               </a>
             </p>
             <CustomButton className="bg-primary text-white">
-              Request Quotatiom
+              Request Quotation
             </CustomButton>
           </div>
         </NavbarMenu>
