@@ -5,10 +5,10 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 
 const HeroSection = () => {
   return (
-    <section className="container mx-auto gap-10 lg:gap-20 lg:my-32 my-20 flex flex-col justify-center items-center">
+    <section className="container mx-auto gap-10 lg:gap-20 lg:my-32 lg:mt-32 mt-5 mb-10 pt-10 flex flex-col justify-center items-center">
       {/* Hero Content */}
       <motion.div
-        className="text-center lg:text-left lg:col-span-2"
+        className="text-center lg:text-left lg:col-span-2 pt-10"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -69,7 +69,7 @@ const HeroSection = () => {
 
       {/* Decorative Images */}
       <motion.div
-        className="absolute top-1/4 lg:left-28 left-2"
+        className="absolute lg:top-1/4 top-28 lg:left-28 left-2"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.3, duration: 0.6 }}
