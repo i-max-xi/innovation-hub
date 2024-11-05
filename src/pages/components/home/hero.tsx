@@ -14,7 +14,7 @@ const HeroSection = () => {
         transition={{ duration: 0.6 }}
       >
         <motion.p
-          className="text-center text-sm font-medium text-gray-500 mb-2 bg-white rounded-full w-fit p-1 px-2 flex justify-self-center"
+          className="text-center lg:text-sm text-xs font-medium text-gray-500 mb-2 bg-white rounded-full w-fit p-1 px-2 flex justify-self-center"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.5 }}
@@ -22,7 +22,7 @@ const HeroSection = () => {
           Empowering Tomorrow's Innovators
         </motion.p>
         <motion.h1
-          className="text-center text-4xl lg:text-5xl font-bold text-primary-text-text mb-6"
+          className="text-center text-2xl lg:text-5xl font-bold text-primary-text-text mb-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.6 }}
@@ -38,7 +38,7 @@ const HeroSection = () => {
           </motion.span>
         </motion.h1>
         <motion.p
-          className="text-gray-600 text-lg mb-8 text-center w-2/3 flex justify-self-center"
+          className="text-gray-600 lg:text-lg text-sm mb-8 text-center w-2/3 flex justify-self-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.5 }}
@@ -69,7 +69,7 @@ const HeroSection = () => {
 
       {/* Decorative Images */}
       <motion.div
-        className="hidden lg:block absolute top-1/4 left-28"
+        className="absolute top-1/4 lg:left-28 left-2"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.3, duration: 0.6 }}
@@ -77,7 +77,7 @@ const HeroSection = () => {
         <img
           src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=100&h=100&fit=crop"
           alt="User 1"
-          className="rounded-full w-12 h-12 border-2 border-gray-200"
+          className="rounded-full lg:w-12 lg:h-12 h-8 w-8 border-2 border-gray-200"
         />
         <Icon
           icon="lsicon:shield-outline"
@@ -85,7 +85,7 @@ const HeroSection = () => {
         />
       </motion.div>
       <motion.div
-        className="hidden lg:block absolute top-1/3 right-32"
+        className=" absolute lg:top-1/3 top-2/5  lg:right-32 right-0"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.5, duration: 0.6 }}
@@ -93,12 +93,12 @@ const HeroSection = () => {
         <img
           src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=100&h=100&fit=crop"
           alt="User 2"
-          className="rounded-full w-12 h-12 border-2 border-gray-200"
+          className="rounded-full lg:w-12 lg:h-12 h-8 w-8 border-2 border-gray-200"
         />
         <Icon icon="bx:bx-check" className="text-primary" />
       </motion.div>
       <motion.div
-        className="hidden lg:block absolute bottom-20 right-1/4"
+        className=" absolute bottom-20 lg:right-1/4 left-10"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.7, duration: 0.6 }}
@@ -106,7 +106,7 @@ const HeroSection = () => {
         <img
           src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&h=100&fit=crop"
           alt="User 3"
-          className="rounded-full w-12 h-12 border-2 border-gray-200"
+          className="rounded-full lg:w-12 lg:h-12 h-8 w-8 border-2 border-gray-200"
         />
         <Icon icon="la:telegram-plane" className="text-primary" />
       </motion.div>

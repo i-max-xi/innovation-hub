@@ -1,16 +1,18 @@
+import { CustomButton } from "@/components/shared/shared_customs";
+
 const JoinUs = () => {
   return (
     <section className=" py-16 bg-primary text-white text-center mb-10 w-full">
-      <h2 className="text-3xl font-semibold mb-6">
+      <h2 className="lg:text-3xl text-lg font-semibold mb-6">
         Join Us in Shaping the Future of Business
       </h2>
-      <p className="text-lg mb-6">
+      <p className="lg:text-lg text-xs mb-6">
         Together, we can build a world where businesses thrive through trusted
         partnerships and seamless trading solutions.
       </p>
-      <button className="bg-white text-primary px-8 py-3 rounded-md font-semibold transition-transform duration-300 transform hover:scale-105">
+      <CustomButton className="bg-white text-primary px-8 py-3 rounded-md font-semibold transition-transform duration-300 transform hover:scale-105">
         Get Started
-      </button>
+      </CustomButton>
     </section>
   );
 };
