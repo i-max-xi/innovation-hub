@@ -12,7 +12,7 @@ const LazyPageWrapper = ({ component }: ILazyPageWrapper) => {
         <div className="w-full h-screen grid place-items-center">
           <div className="flex flex-col items-center justify-center gap-y-2">
             <img
-              src="/icons/logo.jpg"
+              src="/icons/logo.png"
               alt="logo"
               className="w-[2rem] aspect-square"
             />

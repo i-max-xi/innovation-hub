@@ -6,6 +6,8 @@ import { motion, useScroll } from "framer-motion";
 import MainLayout from "./layout/main_layout";
 import NotFound from "./components/shared/not_found";
 const Home = lazy(() => import("./pages/home"));
+const Services = lazy(() => import("./pages/services"));
+const AboutUs = lazy(() => import("./pages/about"));
 
 function App() {
   const { scrollYProgress } = useScroll();
@@ -22,6 +24,8 @@ function App() {
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route path="" element={<Home />} />
+            <Route path="services" element={<Services />} />
+            <Route path="about-us" element={<AboutUs />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

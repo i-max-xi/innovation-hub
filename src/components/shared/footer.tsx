@@ -15,7 +15,14 @@ const Footer = () => {
       />
       <div className="container py-10 md:py-16 lg:grid grid-cols-[0.4fr,1fr,0.4fr] gap-x-5">
         <div className="space-y-3 flex flex-col items-center lg:items-start">
-          <img src="/icons/logo.jpg" alt="logo-white" className="w-[2.3rem]" />
+          <div className="flex items-center gap-1">
+            <img
+              src="/icons/logo.png"
+              alt="logo-white"
+              className="w-[2.3rem]"
+            />
+            <p className="font-bold text-inherit uppercase">innovation hub</p>
+          </div>
           <p className="text-sm">Providing software solutions</p>
           <div className="flex items-center gap-x-3">
             {socials.map((item, index) => (
@@ -30,7 +37,7 @@ const Footer = () => {
             ))}
           </div>
         </div>
-        <div className="hidden lg:grid grid-cols-3">
+        <div className="hidden lg:grid grid-cols-2">
           {FOOTER_ITEMS.map((item, index) => (
             <div key={index}>
               <h1 className="text-primary-white mb-2 text-[17px] font-medium">
@@ -109,66 +116,54 @@ const socials = [
 
 const FOOTER_ITEMS = [
   {
-    header: "My Account",
+    header: "Know Us",
     links: [
       {
-        title: "My Account",
+        title: "About Us",
         href: "",
       },
       {
-        title: "Order History",
+        title: "Our Services",
         href: "",
       },
       {
-        title: "Shopping Cart",
-        href: "",
-      },
-      {
-        title: "Wishlist",
+        title: "Expolore our Work",
         href: "",
       },
     ],
   },
   {
-    header: "Helps",
+    header: "Help",
     links: [
       {
-        title: "Contact",
+        title: "Contact Us",
         href: "",
       },
       {
-        title: "Faqs",
-        href: "",
-      },
-      {
-        title: "Terms & Conditions",
-        href: "",
-      },
-      {
-        title: "Privacy",
+        title: "Pricing",
         href: "",
       },
     ],
   },
-  {
-    header: "Proxy",
-    links: [
-      {
-        title: "About",
-        href: "",
-      },
-      {
-        title: "Shop",
-        href: "",
-      },
-      {
-        title: "Product",
-        href: "",
-      },
-      {
-        title: "Track Order",
-        href: "",
-      },
-    ],
-  },
+  // {
+  //   header: "Proxy",
+  //   links: [
+  //     {
+  //       title: "About",
+  //       href: "",
+  //     },
+  //     {
+  //       title: "Shop",
+  //       href: "",
+  //     },
+  //     {
+  //       title: "Product",
+  //       href: "",
+  //     },
+  //     {
+  //       title: "Track Order",
+  //       href: "",
+  //     },
+  //   ],
+  // },
 ];

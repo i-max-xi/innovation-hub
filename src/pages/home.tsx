@@ -1,13 +1,14 @@
-import { motion } from "framer-motion";
 import StatsSection from "./components/home/stats-section";
 import WhyUs from "./components/home/why-us";
 import FancySection from "./components/home/fancy-section";
+import HeroSection from "./components/home/hero";
+import InfoSection from "./components/home/info-section";
+import JoinUs from "./components/shared/join-us";
 
 const Home = () => {
   return (
     <main className="mt-4 md:mt-8">
-      <section className="container flex flex-col justify-center items-center">
-        {/* Image with entry animation and continuous bounce */}
+      {/* <section className="container flex flex-col justify-center items-center">
         <motion.img
           src="/images/thinking.png"
           alt="thinking"
@@ -25,7 +26,6 @@ const Home = () => {
           }}
         />
 
-        {/* Heading animation */}
         <motion.h1
           className="text-lg md:text-2xl  font-semibold"
           initial={{ opacity: 0, x: -100 }}
@@ -34,10 +34,16 @@ const Home = () => {
         >
           A journey of a thousand miles...
         </motion.h1>
+      </section> */}
+
+      <section className="flex justify-center items-center justify-self-center">
+        <HeroSection />
       </section>
       <StatsSection />
       <WhyUs />
       <FancySection />
+      <JoinUs />
+      <InfoSection />
     </main>
   );
 };

@@ -9,7 +9,7 @@ const StatsSection = () => {
   return (
     <section
       ref={ref}
-      className="bg-[#4C7F64] p-5 md:p-20 my-16 w-full text-primary-white relative overflow-hidden"
+      className="bg-[#4C7F64] p-5 md:p-20 my-16 w-full text-primary-text-white relative overflow-hidden"
     >
       <div className="container mx-auto relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 relative">
@@ -62,11 +62,12 @@ const StatsSection = () => {
           ))}
         </div>
       </div>
-      <img
-        src="/images/logo_clustered.png"
-        alt="clustered_logos"
-        className="absolute left-0 top-0 z-0"
-      />
+      {/* unspalsh transpaenret bubbles image */}
+      {/* <img
+        src="https://plus.unsplash.com/premium_photo-1700929226168-b2d925f50b5c?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="transparent bubbles background"
+        className="absolute left-0 top-0 z-0 object-cover w-full h-full mix-blend-multiply"
+      /> */}
     </section>
   );
 };

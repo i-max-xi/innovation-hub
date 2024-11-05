@@ -7,18 +7,15 @@ import {
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
-  cn,
 } from "@nextui-org/react";
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { CustomButton } from "./shared_customs";
 
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // const { onOpenChange } = useDisclosure();
-
-  const { pathname } = useLocation();
 
   //   const isUseCase = pathname.includes("use-cases");
 
@@ -45,7 +42,7 @@ export default function NavbarComponent() {
 
         <NavbarContent className="lg:hidden pr-3" justify="center">
           <NavbarBrand as={Link} to="/" className="flex gap-x-3">
-            <img src="/icons/logo.jpg" className="w-[1.3rem]" alt="logo" />
+            <img src="/icons/logo.png" className="w-[1.3rem]" alt="logo" />
             <p className="font-bold text-inherit uppercase">innovation hub</p>
           </NavbarBrand>
         </NavbarContent>
@@ -55,21 +52,28 @@ export default function NavbarComponent() {
           justify="center"
         >
           <NavbarBrand as={Link} to="/" className="flex gap-x-3 ">
-            <img src="/icons/logo.jpg" className="w-[1.3rem]" alt="logo" />
+            <img src="/icons/logo.png" className="w-[1.3rem]" alt="logo" />
             <p className="font-bold text-inherit uppercase">innovation hub</p>
           </NavbarBrand>
           <div className="flex w-[87%] gap-x-5 justify-center items-center">
             {menuItems.map((item, index) => (
               <NavbarItem key={`${item}-${index}`}>
-                <Link
+                <NavLink
                   to={item.link}
-                  className={cn(
-                    "w-full text-sm text-[#1A1A1A]",
-                    pathname.includes(item.link) && "text-primary"
-                  )}
+                  className={({ isActive }) =>
+                    `w-full text-sm text-[#1A1A1A] ${
+                      isActive
+                        ? "text-primary border-b-3 border-primary"
+                        : "text-[#1A1A1A]"
+                    }`
+                  }
+                  // className={cn(
+                  //   "w-full text-sm text-[#1A1A1A]",
+                  //   pathname.includes(item.link) && "text-primary-text"
+                  // )}
                 >
                   {item.title}
-                </Link>
+                </NavLink>
               </NavbarItem>
             ))}
           </div>
@@ -95,16 +99,18 @@ export default function NavbarComponent() {
         <NavbarMenu className="bg-white">
           {menuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
-              <Link
+              <NavLink
+                className={({ isActive }) =>
+                  `w-full text-sm text-[#1A1A1A] hover:border-b-2 border-primary ${
+                    isActive
+                      ? "text-primary border-b-3 border-primary"
+                      : "text-[#1A1A1A]"
+                  }`
+                }
                 to={item.link}
-                onClick={() => setIsMenuOpen(false)}
-                className={cn(
-                  "w-full text-sm text-[#1A1A1A]",
-                  pathname.includes(item.link) && "text-primary"
-                )}
               >
                 {item.title}
-              </Link>
+              </NavLink>
             </NavbarMenuItem>
           ))}
           <div className="flex md:gap-x-4 flex-col gap-4">
@@ -133,11 +139,11 @@ const menuItems = [
     title: "Home",
   },
   {
-    link: "/supplier-signup",
+    link: "/about-us",
     title: "About Us",
   },
   {
-    link: "/fulfillment-services",
+    link: "/services",
     title: "Our Services",
   },
   {

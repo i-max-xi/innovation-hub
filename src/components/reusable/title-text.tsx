@@ -4,7 +4,7 @@ type TitleTextProps = {
 
 export const TitleText = ({ title }: TitleTextProps) => {
   return (
-    <h1 className="font-medium text-lg md:text-2xl text-primary capitalize">
+    <h1 className="font-medium text-lg md:text-2xl text-primary-text capitalize">
       {title}
     </h1>
   );
