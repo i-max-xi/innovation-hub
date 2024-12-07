@@ -15,7 +15,7 @@ const StatsSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 relative">
           {[
             {
-              value: 37,
+              value: 15,
               suffix: "+",
               description: "Years of Hard Work",
             },
@@ -30,7 +30,7 @@ const StatsSection = () => {
               description: "Qualified Team Members",
             },
             {
-              value: 750,
+              value: 22,
               suffix: "k+",
               description: "Monthly Orders",
             },

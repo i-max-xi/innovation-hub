@@ -34,7 +34,8 @@ const WhyUs = () => {
     >
       <HeaderText title="Why work with us ?" />
       <p className="text-xs md:text-md text-gray-500 text-center">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        We’re your partner in innovation, turning ideas into impactful solutions
+        for a brighter future.
       </p>
 
       <motion.div
@@ -55,39 +56,33 @@ export default WhyUs;
 
 const infos = [
   {
-    title: "Lorem ipsum dolor",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Recusandae voluptatibus reprehenderit.`,
-    icon: "codicon:globe",
+    title: "Proven Expertise",
+    description: `With years of experience, we deliver solutions that are not only robust but also cutting-edge, ensuring your business stays ahead of the curve.`,
+    icon: "material-symbols:verified",
   },
   {
-    title: "Lorem ipsum dolor",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Recusandae voluptatibus reprehenderit.`,
-    icon: "codicon:globe",
+    title: "Tailored Solutions",
+    description: `We don’t believe in one-size-fits-all. Each solution is crafted to align with your unique goals, industry demands, and customer expectations.`,
+    icon: "mdi:cube-outline",
   },
   {
-    title: "Lorem ipsum dolor",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Recusandae voluptatibus reprehenderit.`,
-    icon: "codicon:globe",
+    title: "Results-Driven Approach",
+    description: `Our methodologies prioritize measurable outcomes, ensuring your investment translates into tangible growth and success.`,
+    icon: "ph:chart-line-bold",
   },
   {
-    title: "Lorem ipsum dolor",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Recusandae voluptatibus reprehenderit.`,
-    icon: "codicon:globe",
+    title: "Seamless Collaboration",
+    description: `We partner with you at every step, combining your vision with our technical expertise to create solutions that truly resonate.`,
+    icon: "ic:baseline-group-work",
   },
   {
-    title: "Lorem ipsum dolor",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Recusandae voluptatibus reprehenderit.`,
-    icon: "codicon:globe",
+    title: "Cutting-Edge Technologies",
+    description: `Innovation is at our core. We leverage the latest technologies to ensure your solutions are scalable, secure, and future-ready.`,
+    icon: "ph:circles-three-bold",
   },
   {
-    title: "Lorem ipsum dolor",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Recusandae voluptatibus reprehenderit.`,
-    icon: "codicon:globe",
+    title: "Exceptional Support",
+    description: `From project kickoff to post-launch, our dedicated team is with you to address challenges and keep your solution running smoothly.`,
+    icon: "material-symbols:headset-mic-outline",
   },
 ];

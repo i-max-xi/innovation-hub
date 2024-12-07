@@ -8,6 +8,8 @@ import NotFound from "./components/shared/not_found";
 const Home = lazy(() => import("./pages/home"));
 const Services = lazy(() => import("./pages/services"));
 const AboutUs = lazy(() => import("./pages/about"));
+const Product = lazy(() => import("./pages/products"));
+const Contact = lazy(() => import("./pages/contact"));
 
 function App() {
   const { scrollYProgress } = useScroll();
@@ -26,6 +28,8 @@ function App() {
             <Route path="" element={<Home />} />
             <Route path="services" element={<Services />} />
             <Route path="about-us" element={<AboutUs />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="products" element={<Product />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

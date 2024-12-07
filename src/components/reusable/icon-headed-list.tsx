@@ -12,7 +12,7 @@ export const IconHeadedList = ({
   description,
 }: IconHeadedListProps) => {
   return (
-    <div className="flex flex-col items-center text-center p-4">
+    <div className="flex flex-col items-center  p-4">
       <div className="flex items-center justify-center mb-4">
         <Icon
           icon={icon}
@@ -21,10 +21,12 @@ export const IconHeadedList = ({
           style={{ strokeWidth: 1 }}
         />
       </div>
-      <p className="text-[#1A1A1A] font-medium text-lg mb-2 lg:w-3/4 leading-5">
+      <p className="text-[#1A1A1A] font-medium text-lg mb-2 lg:w-3/4 leading-5 text-center">
         {title}
       </p>
-      <p className="text-[#737373] text-sm">{description}</p>
+      <p className="text-[#737373] text-sm text-pretty text-center">
+        {description}
+      </p>
     </div>
   );
 };

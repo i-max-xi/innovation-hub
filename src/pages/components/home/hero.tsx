@@ -2,8 +2,11 @@ import { motion } from "framer-motion";
 // import { CustomInputTextField } from "@/components/shared/custom-text-field";
 import { CustomButton } from "@/components/shared/shared_customs";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="container mx-auto gap-10 lg:gap-20 lg:my-32 lg:mt-32 mt-5 mb-10 pt-10 flex flex-col justify-center items-center">
       {/* Hero Content */}
@@ -38,7 +41,7 @@ const HeroSection = () => {
           </motion.span>
         </motion.h1>
         <motion.p
-          className="text-gray-600 lg:text-lg text-sm mb-8 text-center w-2/3 flex justify-self-center"
+          className="text-gray-600  text-xs md:text-sm mb-8 text-center lg:w-2/3  flex justify-self-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.5 }}
@@ -54,16 +57,25 @@ const HeroSection = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.1, duration: 0.4 }}
         >
-          {/* <CustomInputTextField
-            className="px-4 py-1 border border-gray-300 outline-none focus:border-green-700"
-            placeholder="Enter your email"
-            isClearabe
-            onChange={() => {}}
-          /> */}
-
-          <CustomButton className="rounded-md bg-primary text-white">
-            Request Quotation
-          </CustomButton>
+          <motion.div
+            initial={{ scale: 1 }}
+            animate={{
+              scale: [1, 1.2, 1],
+              x: [0, -5, 5, -5, 5, 0], // Shake effect
+            }}
+            transition={{
+              delay: 1.5, // Trigger after all animations
+              duration: 0.8, // Total duration of scale and shake
+              ease: "easeInOut",
+            }}
+          >
+            <CustomButton
+              onClick={() => navigate("/contact")}
+              className="rounded-md bg-primary text-white px-4 py-2"
+            >
+              Request Quotation
+            </CustomButton>
+          </motion.div>
         </motion.div>
       </motion.div>
 

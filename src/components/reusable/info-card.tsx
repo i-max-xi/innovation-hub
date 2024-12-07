@@ -1,6 +1,5 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import React from "react";
-import { CustomButton } from "../shared/shared_customs";
 
 interface InfoCardProps {
   title: string;
@@ -20,9 +19,9 @@ export const InfoCard: React.FC<InfoCardProps> = ({
         <h3 className="text-sm md:text-lg">{title}</h3>
         <p className="text-xs md:text-sm w-4/5">{description}</p>
       </div>
-      <CustomButton className="w-1/3 rounded-md bg-primary text-white group-hover:bg-white group-hover:text-primary-text transition-all duration-300">
+      {/* <CustomButton className="w-1/3 rounded-md bg-primary text-white group-hover:bg-white group-hover:text-primary-text transition-all duration-300">
         click here
-      </CustomButton>
+      </CustomButton> */}
     </div>
   );
 };

@@ -9,11 +9,13 @@ import {
   NavbarMenuItem,
 } from "@nextui-org/react";
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { CustomButton } from "./shared_customs";
 
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navigate = useNavigate();
 
   // const { onOpenChange } = useDisclosure();
 
@@ -26,10 +28,7 @@ export default function NavbarComponent() {
         onMenuOpenChange={setIsMenuOpen}
         isBordered
         {...{
-          ariaLabel: "Foundry Navbar",
-          //   shouldHideOnScroll: isUseCase ? false : true,
-          // isInverted: true,
-          //   position: isUseCase ? "static" : "sticky",
+          ariaLabel: "Innovation Hub Navbar",
         }}
         maxWidth="2xl"
         className="bg-white w-full"
@@ -67,10 +66,6 @@ export default function NavbarComponent() {
                         : "text-[#1A1A1A]"
                     }`
                   }
-                  // className={cn(
-                  //   "w-full text-sm text-[#1A1A1A]",
-                  //   pathname.includes(item.link) && "text-primary-text"
-                  // )}
                 >
                   {item.title}
                 </NavLink>
@@ -90,7 +85,10 @@ export default function NavbarComponent() {
                 +233 24 790 2288
               </a>
             </p>
-            <CustomButton className="bg-primary text-white">
+            <CustomButton
+              onClick={() => navigate("/contact")}
+              className="bg-primary text-white"
+            >
               Request Quotation
             </CustomButton>
           </NavbarItem>
@@ -100,6 +98,7 @@ export default function NavbarComponent() {
           {menuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <NavLink
+                onClick={() => setIsMenuOpen(false)}
                 className={({ isActive }) =>
                   `w-full text-sm text-[#1A1A1A] hover:border-b-2 border-primary ${
                     isActive
@@ -123,7 +122,13 @@ export default function NavbarComponent() {
                 +233 24 790 2288
               </a>
             </p>
-            <CustomButton className="bg-primary text-white">
+            <CustomButton
+              onClick={() => {
+                navigate("/contact");
+                setIsMenuOpen(false);
+              }}
+              className="bg-primary text-white"
+            >
               Request Quotation
             </CustomButton>
           </div>
@@ -151,8 +156,8 @@ const menuItems = [
     title: "Products",
   },
 
-  {
-    link: "pricing",
-    title: "Pricing",
-  },
+  // {
+  //   link: "/our-work",
+  //   title: "Projects",
+  // },
 ];

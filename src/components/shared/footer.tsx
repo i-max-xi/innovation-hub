@@ -8,11 +8,6 @@ const Footer = () => {
       id="footer"
       className="bg-primary text-primary-white relative h-full"
     >
-      <img
-        src="/images/logo_clustered.png"
-        alt="clustered_logos"
-        className="absolute right-0 top-0"
-      />
       <div className="container py-10 md:py-16 lg:grid grid-cols-[0.4fr,1fr,0.4fr] gap-x-5">
         <div className="space-y-3 flex flex-col items-center lg:items-start">
           <div className="flex items-center gap-1">
@@ -23,7 +18,7 @@ const Footer = () => {
             />
             <p className="font-bold text-inherit uppercase">innovation hub</p>
           </div>
-          <p className="text-sm">Providing software solutions</p>
+          <p className="text-sm">Providing Software Solutions</p>
           <div className="flex items-center gap-x-3">
             {socials.map((item, index) => (
               <a
@@ -98,19 +93,19 @@ export default Footer;
 const socials = [
   {
     icon: "bi:facebook",
-    href: "https://www.facebook.com/profile.php?id=61558790128679",
+    href: "",
   },
   {
     icon: "bi:instagram",
-    href: "https://www.instagram.com/Foundry_platform/",
+    href: "",
   },
   {
     icon: "simple-icons:linkedin",
-    href: "https://www.linkedin.com/company/foundryplatform",
+    href: "",
   },
   {
     icon: "fa-brands:youtube",
-    href: "https://www.youtube.com/@foundry-platform",
+    href: "",
   },
 ];
 
@@ -120,15 +115,15 @@ const FOOTER_ITEMS = [
     links: [
       {
         title: "About Us",
-        href: "",
+        href: "/about-us",
       },
       {
         title: "Our Services",
-        href: "",
+        href: "/services",
       },
       {
-        title: "Expolore our Work",
-        href: "",
+        title: "Explore our Work",
+        href: "/products",
       },
     ],
   },
@@ -137,12 +132,12 @@ const FOOTER_ITEMS = [
     links: [
       {
         title: "Contact Us",
-        href: "",
+        href: "/contact",
       },
-      {
-        title: "Pricing",
-        href: "",
-      },
+      // {
+      //   title: "Pricing",
+      //   href: "",
+      // },
     ],
   },
   // {

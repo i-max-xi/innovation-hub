@@ -5,7 +5,7 @@ const InfoSection = () => {
   return (
     <section className=" p-5 md:p-20 my-10 w-full text-primary-text-white relative overflow-hidden">
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 p-4"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
@@ -27,27 +27,39 @@ export default InfoSection;
 
 const infoList = [
   {
-    icon: "mdi:truck-fast-outline",
-    title: "Accelerate Your Business Growth",
+    icon: "mdi:web",
+    title: "Website Development",
     description:
-      "Explore innovative products and suppliers that fit your business needs, from local to international, across key industries.",
+      "We craft custom, responsive websites that are tailored to your brand, ensuring an outstanding user experience and optimal performance across all devices.",
   },
   {
-    icon: "solar:bag-check-outline",
-    title: "Trusted Partnerships for Your Business",
+    icon: "tabler:seo",
+    title: "Search Engine Optimization (SEO)",
     description:
-      "Partner with verified, reliable suppliers who ensure top-quality products and smooth transactions from start to finish.",
+      "Improve your online visibility and drive more traffic to your site with our proven SEO strategies, helping you rank higher on search engines and attract the right audience.",
   },
   {
-    icon: "solar:box-linear",
-    title: "Smart Business Operations",
+    icon: "mdi:cellphone-android",
+    title: "Mobile App Development",
     description:
-      "Streamline your supply chain, from finding products to managing orders and tracking deliveries, all with ease.",
+      "Develop user-friendly, scalable mobile apps for both iOS and Android. We create engaging apps that meet your business needs and offer seamless user experiences.",
   },
   {
-    icon: "iconoir:headset-help",
-    title: "Exclusive Business Support",
+    icon: "mdi:storefront",
+    title: "E-commerce Solutions",
     description:
-      "Access tailored business resources, from discounts to expert support, helping your business thrive and scale with confidence.",
+      "Launch a fully integrated online store using the latest technology, complete with user-friendly features to drive sales, improve customer engagement, and streamline operations.",
+  },
+  {
+    icon: "mdi:palette",
+    title: "Branding & Design",
+    description:
+      "Build a strong, memorable brand identity with visually appealing designs, logos, and assets that reflect your business values and connect with your target audience.",
+  },
+  {
+    icon: "mingcute:cube-3d-line",
+    title: "3D Modeling & Visualization",
+    description:
+      "Bring your ideas to life with stunning 3D models and realistic visualizations. Whether it's architectural designs or product prototypes, we deliver immersive, high-quality renders.",
   },
 ];
