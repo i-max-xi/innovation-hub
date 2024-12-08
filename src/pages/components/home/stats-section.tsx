@@ -4,7 +4,7 @@ import { useRef } from "react";
 
 const StatsSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.5 }); // Change to true if you want the animation only once
+  const isInView = useInView(ref, { once: true, amount: 0.5 }); // Change to true if you want the animation only once
 
   return (
     <section

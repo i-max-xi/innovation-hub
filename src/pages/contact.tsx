@@ -3,14 +3,19 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Input, Select, SelectItem, Textarea } from "@nextui-org/react";
 import { CustomButton } from "@/components/shared/shared_customs";
+import toast from "react-hot-toast";
+import { useState } from "react";
+import { variables } from "@/utils/env";
 
 // Define Zod validation schema
 const requestQuotationSchema = z.object({
-  services: z
-    .array(z.string())
-    .nonempty("You must select at least one service."),
+  // services: z
+  //   .array(z.string())
+  //   .nonempty("You must select at least one service."),
+  services: z.string().min(1, "service is required"),
   name: z.string().min(1, "Your name is required."),
   email: z.string().email("Please enter a valid email address."),
+  phone: z.string().min(1, "Please enter a valid email address."),
   message: z.string().optional(),
 });
 
@@ -28,14 +33,44 @@ const RequestQuotation = () => {
   const {
     control,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<RequestFormData>({
     resolver: zodResolver(requestQuotationSchema),
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+
   // Handle form submission
-  const onSubmit: SubmitHandler<RequestFormData> = (data) => {
+  const onSubmit: SubmitHandler<RequestFormData> = async (data) => {
     // Handle the form data submission logic here (e.g., send to API)
+
+    const data_to_send = {
+      ...data,
+      subject: "New Quotation Request - Innovation Hub",
+    };
+
+    try {
+      setIsLoading(true);
+
+      await fetch(variables.formspree, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data_to_send),
+      });
+
+      reset(),
+        toast.success(
+          "Details submitted successfully, we will contact you soon!"
+        );
+    } catch (error) {
+      // Show error message if submission fails
+      toast.error("Failed to submit, Please try again");
+    } finally {
+      setIsLoading(false); // Always reset loading state, regardless of success or failure
+    }
     console.log(data);
   };
 
@@ -115,6 +150,25 @@ const RequestQuotation = () => {
             <div className="text-red-600 text-sm">{errors.email.message}</div>
           )}
 
+          {/* phone */}
+          <Controller
+            name="phone"
+            control={control}
+            render={({ field }) => (
+              <Input
+                label="Phone"
+                placeholder="Enter phone number"
+                isRequired
+                {...field}
+                isInvalid={Boolean(errors.phone)}
+                errorMessage={errors.phone?.message}
+              />
+            )}
+          />
+          {errors.phone && (
+            <div className="text-red-600 text-sm">{errors.phone.message}</div>
+          )}
+
           {/* Message Textarea */}
           <Controller
             name="message"
@@ -138,6 +192,7 @@ const RequestQuotation = () => {
           {/* Submit Button */}
           <div className="mt-4 text-center">
             <CustomButton
+              isLoading={isLoading}
               className="px-6 py-3 bg-primary text-white font-semibold rounded-md"
               type="submit"
             >

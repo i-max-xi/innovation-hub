@@ -1,6 +1,7 @@
 import { lazy } from "react";
 import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
+
 import ScrollToTop from "./components/shared/scroll_to_top";
 import { motion, useScroll } from "framer-motion";
 import MainLayout from "./layout/main_layout";
