@@ -5,7 +5,7 @@ import { useRef } from "react";
 const WhyUs = () => {
   // Ref for the section to trigger animations on view
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.2 }); // Change `once: false` to allow re-triggering
+  const isInView = useInView(ref, { once: true, amount: 0.2 }); // Change `once: false` to allow re-triggering
 
   // Define animation variants for staggered effect
   const containerVariants = {

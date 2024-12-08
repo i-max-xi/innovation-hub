@@ -110,7 +110,7 @@ const HeroSection = () => {
         <Icon icon="bx:bx-check" className="text-primary" />
       </motion.div>
       <motion.div
-        className=" absolute bottom-20 lg:right-1/4 left-10"
+        className=" absolute lg:bottom-20 lg:right-1/4 left-10 bottom-40"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.7, duration: 0.6 }}

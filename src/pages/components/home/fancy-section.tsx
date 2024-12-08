@@ -7,14 +7,14 @@ const FancySection = () => {
   const navigate = useNavigate();
   return (
     <section className="container grid grid-cols-2 gap-10 lg:gap-20 lg:mt-40 my-20">
-      <div className="flex flex-col gap-5  lg:gap-10 text-xs md:text-lg">
-        <Card className="shadow-lg p-3 transform -rotate-3  bg-primary text-white hover:shadow-md hover:scale-105 hover:-rotate-2 transition-all duration-300 ">
+      <div className="flex flex-col gap-5  lg:gap-10 text-[10px] md:text-lg">
+        <Card className="shadow-lg lg:p-3 p-2 transform -rotate-3  bg-primary text-white hover:shadow-md hover:scale-105 hover:-rotate-2 transition-all duration-300 ">
           <div className="flex justify-between ">
             <p>$482,828</p>
             <p>Projects Delivered</p>
           </div>
         </Card>
-        <Card className="shadow-lg p-3 transform rotate-1   bg-white hover:shadow-md  text-black hover:scale-105 hover:rotate-1 transition-all duration-300 ">
+        <Card className="shadow-lg lg:p-3 p-2 transform rotate-1   bg-white hover:shadow-md  text-black hover:scale-105 hover:rotate-1 transition-all duration-300 ">
           <div className="flex justify-between">
             <p>$1M</p>
             <p>Client Revenue Growth</p>
