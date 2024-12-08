@@ -11,13 +11,13 @@ const HeroSection = () => {
     <section className="container mx-auto gap-10 lg:gap-20 lg:my-32 lg:mt-32 mt-5 mb-10 pt-10 flex flex-col justify-center items-center">
       {/* Hero Content */}
       <motion.div
-        className="text-center lg:text-left lg:col-span-2 pt-10"
+        className="text-center lg:text-left lg:col-span-2 pt-10 mx-auto flex flex-col justify-center items-center"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
         <motion.p
-          className="text-center lg:text-sm text-xs font-medium text-gray-500 mb-2 bg-white rounded-full w-fit p-1 px-2 flex justify-self-center"
+          className="text-center lg:text-sm text-xs font-medium text-gray-500 mb-2 bg-white rounded-full w-fit p-1 px-2 flex justify-self-center "
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.5 }}
@@ -110,7 +110,7 @@ const HeroSection = () => {
         <Icon icon="bx:bx-check" className="text-primary" />
       </motion.div>
       <motion.div
-        className=" absolute lg:bottom-20 lg:right-1/4 left-10 bottom-40"
+        className=" absolute lg:bottom-[10%] lg:right-1/4 left-10 bottom-[30%]"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.7, duration: 0.6 }}
