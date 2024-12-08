@@ -132,7 +132,7 @@ const FOOTER_ITEMS = [
     links: [
       {
         title: "Contact Us",
-        href: "/contact",
+        href: "/support",
       },
       // {
       //   title: "Pricing",

@@ -11,6 +11,7 @@ const Services = lazy(() => import("./pages/services"));
 const AboutUs = lazy(() => import("./pages/about"));
 const Product = lazy(() => import("./pages/products"));
 const Contact = lazy(() => import("./pages/contact"));
+const Support = lazy(() => import("./pages/support"));
 
 function App() {
   const { scrollYProgress } = useScroll();
@@ -31,6 +32,7 @@ function App() {
             <Route path="about-us" element={<AboutUs />} />
             <Route path="contact" element={<Contact />} />
             <Route path="products" element={<Product />} />
+            <Route path="support" element={<Support />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

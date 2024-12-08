@@ -1,42 +1,30 @@
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Input, Select, SelectItem, Textarea } from "@nextui-org/react";
+import { Input, Textarea } from "@nextui-org/react";
 import { CustomButton } from "@/components/shared/shared_customs";
 import toast from "react-hot-toast";
 import { useState } from "react";
 import { variables } from "@/utils/env";
 
 // Define Zod validation schema
-const requestQuotationSchema = z.object({
-  // services: z
-  //   .array(z.string())
-  //   .nonempty("You must select at least one service."),
-  services: z.string().min(1, "service is required"),
+const supportSchema = z.object({
   name: z.string().min(1, "Your name is required."),
   email: z.string().email("Please enter a valid email address."),
   phone: z.string().optional(),
   message: z.string().optional(),
 });
 
-type RequestFormData = z.infer<typeof requestQuotationSchema>;
+type RequestFormData = z.infer<typeof supportSchema>;
 
-const servicesOptions = [
-  { label: "Web Development", value: "web-development" },
-  { label: "SEO Optimization", value: "seo" },
-  { label: "Mobile App Development", value: "mobile-app" },
-  { label: "E-commerce Solutions", value: "e-commerce" },
-  { label: "Branding & Design", value: "branding" },
-];
-
-const RequestQuotation = () => {
+const Support = () => {
   const {
     control,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm<RequestFormData>({
-    resolver: zodResolver(requestQuotationSchema),
+    resolver: zodResolver(supportSchema),
     defaultValues: {
       phone: "",
     },
@@ -50,7 +38,7 @@ const RequestQuotation = () => {
 
     const data_to_send = {
       ...data,
-      subject: "New Quotation Request - Innovation Hub",
+      subject: "Support needed - Innovation Hub",
     };
 
     try {
@@ -81,40 +69,17 @@ const RequestQuotation = () => {
     <main className="my-4 md:my-6 container mx-auto mb-10">
       <section className="hero-section py-10 text-center">
         <h1 className="text-2xl lg:text-5xl font-bold text-primary mb-4">
-          Request a Quotation
+          We're Here to Help
         </h1>
         <p className="text-xs lg:text-sm text-gray-700 max-w-2xl mx-auto">
-          Let us know your requirements and we'll get back to you with a quote.
+          Whether you have questions about our services, need assistance with an
+          ongoing project, or simply want to explore how we can help you achieve
+          your goals, we’re here to provide the support you need. Let us know
+          how we can assist you today.
         </p>
       </section>
       <section className="space-y-6">
         <form className="flex flex-col gap-3" onSubmit={handleSubmit(onSubmit)}>
-          {/* Services Multi-Select Field */}
-          <Controller
-            name="services"
-            control={control}
-            render={({ field }) => (
-              <Select
-                label="Select the services you're interested in"
-                placeholder="Choose services"
-                multiple
-                {...field}
-                isInvalid={Boolean(errors.services)}
-              >
-                {servicesOptions.map((option) => (
-                  <SelectItem key={option.value} value={option.value}>
-                    {option.label}
-                  </SelectItem>
-                ))}
-              </Select>
-            )}
-          />
-          {errors.services && (
-            <div className="text-red-600 text-sm">
-              {errors.services.message}
-            </div>
-          )}
-
           {/* Contact Name Input */}
           <Controller
             name="name"
@@ -178,7 +143,7 @@ const RequestQuotation = () => {
             control={control}
             render={({ field }) => (
               <Textarea
-                label="Additional Details"
+                label="Message"
                 placeholder="Provide any other details we should know"
                 {...field}
                 errorMessage={
@@ -199,7 +164,7 @@ const RequestQuotation = () => {
               className="px-6 py-3 bg-primary text-white font-semibold rounded-md"
               type="submit"
             >
-              Submit Request
+              Submit
             </CustomButton>
           </div>
         </form>
@@ -208,4 +173,4 @@ const RequestQuotation = () => {
   );
 };
 
-export default RequestQuotation;
+export default Support;
