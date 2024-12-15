@@ -5,13 +5,32 @@ import ProductCard, {
 const Products = () => {
   const products: ProductCardProps[] = [
     {
+      title: "Foundry Hub",
+      services: ["Search Engine Optimization (SEO)"],
+      description: "A successful B2B e-commerce ",
+      link_to: "",
+      display1: {
+        type: "image",
+        render: "/images/products/BEFORE.png",
+      },
+      display2: {
+        type: "image",
+        render: "/images/products/AFTER.png",
+      },
+    },
+    {
       title: "AfroLoom",
+      services: [
+        "3D Modeling & Visualization",
+        "Website Development",
+        "E-commerce Solutions",
+      ],
       description:
         "A clothing e-commerce platform that allows 3D customization of its products",
       link_to: "https://www.afroloom.com",
       display1: {
         type: "image",
-        render: "https://placehold.co/400",
+        render: "/images/products/afroloom.jpg",
       },
       display2: {
         type: "video",
@@ -20,6 +39,7 @@ const Products = () => {
     },
     {
       title: "Fraud Detection as a SASS",
+      services: ["Website Development", "Business Intelligence"],
       description:
         "A SASS platform built-in house to be used by insurance companies to detect fraudulent attempts from their customers",
       link_to:
@@ -56,7 +76,7 @@ const Products = () => {
       </section>
 
       {/* Products Grid */}
-      <section className="flex flex-col gap-6 py-10">
+      <section className="flex flex-col gap-10 py-10">
         {products.map((product, index) => (
           <ProductCard key={index} {...product} />
         ))}

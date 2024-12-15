@@ -3,16 +3,41 @@ interface DisplayContent {
   render: string; // URL for the image or video
 }
 
+type servicesType =
+  | "Branding & Design"
+  | "Search Engine Optimization (SEO)"
+  | "Mobile App Development"
+  | "E-commerce Solutions"
+  | "3D Modeling & Visualization"
+  | "Website Development"
+  | "Business Intelligence";
+
 export interface ProductCardProps {
   title: string;
+  services: servicesType[];
   description: string;
   link_to: string;
   display1: DisplayContent;
   display2?: DisplayContent; // Optional since not all products have a second display
 }
 
+const serviceBadge = (service: servicesType) => {
+  const badgeColors: Record<servicesType, string> = {
+    "Branding & Design": "bg-blue-100 text-blue-700",
+    "Search Engine Optimization (SEO)": "bg-green-100 text-green-700",
+    "Mobile App Development": "bg-purple-100 text-purple-700",
+    "E-commerce Solutions": "bg-orange-100 text-orange-700",
+    "3D Modeling & Visualization": "bg-pink-100 text-pink-700",
+    "Website Development": "bg-indigo-100 text-indigo-700",
+    "Business Intelligence": "bg-teal-100 text-teal-700",
+  };
+
+  return badgeColors[service] || "bg-gray-100 text-gray-700";
+};
+
 const ProductCard = ({
   title,
+  services,
   description,
   //   link_to,
   display1,
@@ -24,7 +49,22 @@ const ProductCard = ({
       <h2 className="text-lg font-bold text-primary mb-2">
         {title || "Untitled Product"}
       </h2>
+      {/* Description */}
+      <p className="text-sm text-gray-600 mb-4">
+        {description || "No description available."}
+      </p>
 
+      <div className="flex flex-wrap gap-2 mb-4 items-center">
+        <p className="text-sm">Services provided:</p>{" "}
+        {services.map((service) => (
+          <span
+            key={service}
+            className={`px-2 py-1 text-sm rounded-lg ${serviceBadge(service)}`}
+          >
+            {service}
+          </span>
+        ))}
+      </div>
       {/* Display Content */}
       <div className="product-display mb-4 flex flex-col md:flex-row gap-4 items-center">
         {display1?.type === "image" ? (
@@ -58,11 +98,6 @@ const ProductCard = ({
           </div>
         )}
       </div>
-
-      {/* Description */}
-      <p className="text-sm text-gray-600 mb-4">
-        {description || "No description available."}
-      </p>
 
       {/* Link */}
       {/* <a
