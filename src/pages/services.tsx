@@ -13,6 +13,12 @@ const Services = () => {
         "Boost your online visibility with proven strategies to rank higher on search engines and attract more organic traffic.",
     },
     {
+      title: "Business Intelligence",
+      icon: "BI",
+      description:
+        "Transform data into actionable insights with our Business Intelligence solutions, empowering you to make smarter, data-driven decisions.",
+    },
+    {
       title: "Mobile App Development",
       icon: "MAD",
       description:

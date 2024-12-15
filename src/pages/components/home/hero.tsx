@@ -8,7 +8,7 @@ const HeroSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="container mx-auto gap-10 lg:gap-20 lg:my-32 lg:mt-32 mt-5 mb-10 pt-10 flex flex-col justify-center items-center">
+    <section className="container mx-auto gap-10 lg:gap-20 lg:my-32 lg:mt-32 mt-10 mb-20 pt-10 flex flex-col justify-center items-center">
       {/* Hero Content */}
       <motion.div
         className="text-center lg:text-left lg:col-span-2 pt-10 mx-auto flex flex-col justify-center items-center"
@@ -110,7 +110,7 @@ const HeroSection = () => {
         <Icon icon="bx:bx-check" className="text-primary" />
       </motion.div>
       <motion.div
-        className=" absolute lg:bottom-[10%] lg:right-1/4 left-10 bottom-[30%]"
+        className=" absolute lg:bottom-[10%] lg:right-1/4 left-10 bottom-[35%]"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.7, duration: 0.6 }}

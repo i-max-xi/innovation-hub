@@ -152,7 +152,7 @@ const menuItems = [
     title: "Our Services",
   },
   {
-    link: "",
+    link: "/products",
     title: "Products",
   },
 

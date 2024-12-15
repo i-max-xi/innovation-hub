@@ -27,7 +27,7 @@ const WhyUs = () => {
   return (
     <motion.section
       ref={ref}
-      className="container flex flex-col items-center justify-center lg:my-24 my-10"
+      className="container flex flex-col items-center justify-center lg:my-36 my-10"
       initial="hidden"
       animate={isInView ? "show" : "hidden"} // Trigger animation based on `isInView`
       variants={containerVariants}

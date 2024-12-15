@@ -17,11 +17,11 @@ const StatsSection = () => {
             {
               value: 15,
               suffix: "+",
-              description: "Years of Hard Work",
+              description: "Projects Delivered",
             },
             {
               value: 500,
-              suffix: "k+",
+              suffix: "+",
               description: "Happy Customers",
             },
             {
@@ -30,8 +30,8 @@ const StatsSection = () => {
               description: "Qualified Team Members",
             },
             {
-              value: 22,
-              suffix: "k+",
+              value: 220,
+              suffix: "+",
               description: "Monthly Orders",
             },
           ].map((item, index) => (

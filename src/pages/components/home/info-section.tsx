@@ -1,9 +1,14 @@
 import { motion } from "framer-motion";
-import { IconHeadedList } from "@/components/reusable";
+import { HeaderText, IconHeadedList } from "@/components/reusable";
 
 const InfoSection = () => {
   return (
-    <section className=" p-5 md:p-20 my-10 w-full text-primary-text-white relative overflow-hidden">
+    <section className=" p-5 md:p-20 my-10 w-full text-primary-text-white relative overflow-hidden flex flex-col justify-center items-center">
+      <HeaderText title="What we offer " />
+      {/* <p className="text-xs md:text-md text-gray-500 text-center">
+        We’re your partner in innovation, turning ideas into impactful solutions
+        for a brighter future.
+      </p> */}
       <motion.div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4"
         initial={{ opacity: 0 }}

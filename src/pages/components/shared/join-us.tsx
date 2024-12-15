@@ -17,7 +17,7 @@ const JoinUs = () => {
         onClick={() => navigate("/contact")}
         className="bg-white text-primary px-8 py-3 rounded-md font-semibold transition-transform duration-300 transform hover:scale-105"
       >
-        Get Started
+        Request Quotation
       </CustomButton>
     </section>
   );

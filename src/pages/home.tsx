@@ -11,11 +11,13 @@ const Home = () => {
       <section className="flex justify-center items-center justify-self-center">
         <HeroSection />
       </section>
+
       <StatsSection />
-      <WhyUs />
-      <FancySection />
-      <JoinUs />
       <InfoSection />
+      <JoinUs />
+
+      <FancySection />
+      <WhyUs />
     </main>
   );
 };
