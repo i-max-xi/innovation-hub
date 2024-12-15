@@ -54,16 +54,20 @@ const ProductCard = ({
         {description || "No description available."}
       </p>
 
-      <div className="flex flex-wrap gap-2 mb-4 items-center">
-        <p className="text-sm">Services provided:</p>{" "}
-        {services.map((service) => (
-          <span
-            key={service}
-            className={`px-2 py-1 text-sm rounded-lg ${serviceBadge(service)}`}
-          >
-            {service}
-          </span>
-        ))}
+      <div className="flex flex-col">
+        <p className="text-sm">Services provided:</p>
+        <p className="flex flex-wrap gap-2 mb-4 items-center">
+          {services.map((service) => (
+            <span
+              key={service}
+              className={`px-2 py-1 text-sm rounded-lg ${serviceBadge(
+                service
+              )}`}
+            >
+              {service}
+            </span>
+          ))}
+        </p>
       </div>
       {/* Display Content */}
       <div className="product-display mb-4 flex flex-col md:flex-row gap-4 items-center">
