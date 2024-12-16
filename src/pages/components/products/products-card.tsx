@@ -75,13 +75,13 @@ const ProductCard = ({
           <img
             src={display1.render}
             alt={title}
-            className="w-full h-80 object-cover rounded-lg"
+            className="w-full h-full md:h-96 object-center rounded-lg"
           />
         ) : display1?.type === "video" ? (
           <video
             controls
             src={display1.render}
-            className="w-full h-80 rounded-lg"
+            className="w-full h-full md:h-96 rounded-lg"
           />
         ) : null}
         {display2 && (
@@ -90,13 +90,13 @@ const ProductCard = ({
               <img
                 src={display2.render}
                 alt={title}
-                className="w-full h-80 object-cover rounded-lg"
+                className="w-full h-full md:h-96 object-center rounded-lg"
               />
             ) : display2.type === "video" ? (
               <video
                 controls
                 src={display2.render}
-                className="w-full h-80 rounded-lg"
+                className="w-full h-full md:h-96 rounded-lg"
               />
             ) : null}
           </div>

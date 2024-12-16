@@ -6,6 +6,7 @@ import { CustomButton } from "@/components/shared/shared_customs";
 import toast from "react-hot-toast";
 import { useState } from "react";
 import { variables } from "@/utils/env";
+import { services } from "@/utils/data/services.data";
 
 // Define Zod validation schema
 const requestQuotationSchema = z.object({
@@ -22,11 +23,10 @@ const requestQuotationSchema = z.object({
 type RequestFormData = z.infer<typeof requestQuotationSchema>;
 
 const servicesOptions = [
-  { label: "Web Development", value: "web-development" },
-  { label: "SEO Optimization", value: "seo" },
-  { label: "Mobile App Development", value: "mobile-app" },
-  { label: "E-commerce Solutions", value: "e-commerce" },
-  { label: "Branding & Design", value: "branding" },
+  ...services.map((service) => ({
+    label: service.title,
+    value: service.title,
+  })),
 ];
 
 const RequestQuotation = () => {

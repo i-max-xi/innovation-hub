@@ -46,7 +46,7 @@ const Products = () => {
         "https://fraud-detection-systemgit-cgdjvenzgp3flmpfvnyect.streamlit.app",
       display1: {
         type: "image",
-        render: "https://placehold.co/400",
+        render: "/images/products/fraud-detection.png",
       },
     },
     // {
