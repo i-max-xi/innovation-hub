@@ -17,7 +17,7 @@ export const IconHeadedList = ({
         <Icon
           icon={icon}
           fontSize={40}
-          className="text-[#619B7D]"
+          className="text-[#619B7D] w-10 h-10"
           style={{ strokeWidth: 1 }}
         />
       </div>

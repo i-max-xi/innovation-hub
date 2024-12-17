@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { HeaderText, IconHeadedList } from "@/components/reusable";
+import { service_we_offer } from "@/utils/data/services.data";
 
 const InfoSection = () => {
   return (
@@ -15,7 +16,7 @@ const InfoSection = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
       >
-        {infoList.map((item, index) => (
+        {service_we_offer.map((item, index) => (
           <IconHeadedList
             key={index}
             icon={item.icon}
@@ -29,42 +30,3 @@ const InfoSection = () => {
 };
 
 export default InfoSection;
-
-const infoList = [
-  {
-    icon: "mdi:web",
-    title: "Website Development",
-    description:
-      "We craft custom, responsive websites that are tailored to your brand, ensuring an outstanding user experience and optimal performance across all devices.",
-  },
-  {
-    icon: "tabler:seo",
-    title: "Search Engine Optimization (SEO)",
-    description:
-      "Improve your online visibility and drive more traffic to your site with our proven SEO strategies, helping you rank higher on search engines and attract the right audience.",
-  },
-  {
-    icon: "mdi:cellphone-android",
-    title: "Mobile App Development",
-    description:
-      "Develop user-friendly, scalable mobile apps for both iOS and Android. We create engaging apps that meet your business needs and offer seamless user experiences.",
-  },
-  {
-    icon: "mdi:storefront",
-    title: "E-commerce Solutions",
-    description:
-      "Launch a fully integrated online store using the latest technology, complete with user-friendly features to drive sales, improve customer engagement, and streamline operations.",
-  },
-  {
-    icon: "mdi:palette",
-    title: "Branding & Design",
-    description:
-      "Build a strong, memorable brand identity with visually appealing designs, logos, and assets that reflect your business values and connect with your target audience.",
-  },
-  {
-    icon: "mingcute:cube-3d-line",
-    title: "3D Modeling & Visualization",
-    description:
-      "Bring your ideas to life with stunning 3D models and realistic visualizations. Whether it's architectural designs or product prototypes, we deliver immersive, high-quality renders.",
-  },
-];

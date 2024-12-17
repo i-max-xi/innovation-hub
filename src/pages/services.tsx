@@ -1,4 +1,5 @@
 import { services } from "@/utils/data/services.data";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 const Services = () => {
   return (
@@ -21,10 +22,15 @@ const Services = () => {
             className="service-item 
             "
           >
-            <div className="icon-container mb-4 flex items-center justify-center h-16 w-16 bg-primary/10 rounded-full text-primary">
-              {/* Placeholder for Icon */}
-              <span className="text-2xl font-bold">{service.title[0]}</span>
-            </div>
+            {/* <div className="icon-container mb-4 flex items-center justify-center h-16 w-16 bg-primary/10 rounded-full text-primary">
+              <span className="text-2xl font-bold">{service.icon}</span>
+            </div> */}
+            <Icon
+              icon={service.icon}
+              fontSize={40}
+              className="text-[#97b8a7] w-10 h-10"
+              style={{ strokeWidth: 1 }}
+            />
             <h3 className="text-lg font-semibold text-primary mb-4">
               {service.title}
             </h3>
