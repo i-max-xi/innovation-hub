@@ -78,11 +78,15 @@ const ProductCard = ({
             className="w-full h-full md:h-96 object-center rounded-lg"
           />
         ) : display1?.type === "video" ? (
-          <video
-            controls
-            src={display1.render}
-            className="w-full h-full md:h-96 rounded-lg"
-          />
+          <div className="w-full h-full md:h-96 rounded-lg">
+            <video
+              controls
+              src={display1.render}
+              muted={true}
+              autoPlay={true}
+              className="w-full h-full"
+            />
+          </div>
         ) : null}
         {display2 && (
           <div className="w-full">

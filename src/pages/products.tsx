@@ -34,7 +34,7 @@ const Products = () => {
       },
       display2: {
         type: "video",
-        render: "/path-to-video-1.mp4",
+        render: "/images/products/afroloom_video.mp4",
       },
     },
     {
