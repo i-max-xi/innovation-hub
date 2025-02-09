@@ -4,7 +4,7 @@ import storage from 'redux-persist/lib/storage';
 import globalSlice from './features/global';
 
 const persistConfig = {
-	key: 'Innovation Hub',
+	key: 'AugWell Technologies',
 	storage,
 	whitelist: [],
 	blacklist: [],

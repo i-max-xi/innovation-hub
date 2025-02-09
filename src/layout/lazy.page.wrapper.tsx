@@ -12,11 +12,11 @@ const LazyPageWrapper = ({ component }: ILazyPageWrapper) => {
         <div className="w-full h-screen grid place-items-center">
           <div className="flex flex-col items-center justify-center gap-y-2">
             <img
-              src="/icons/logo.png"
+              src="/icons/augwell_logo.png"
               alt="logo"
               className="w-[2rem] aspect-square"
             />
-            <p className="text-sm">Innovation Hub</p>
+            <p className="text-sm">AugWell Technologies</p>
             <Spinner size="sm" color="current" />
           </div>
         </div>

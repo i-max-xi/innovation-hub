@@ -38,7 +38,7 @@ const Support = () => {
 
     const data_to_send = {
       ...data,
-      subject: "Support needed - Innovation Hub",
+      subject: "Support needed - AugWell Technologies",
     };
 
     try {

@@ -30,11 +30,11 @@ const FancySection = () => {
       >
         <TitleText title="Your Growth, Our Commitment" />
         <p className="text-xs md:text-sm">
-          At Innovation Hub, we transform ideas into impactful solutions. With a
-          proven track record of delivering measurable results and driving
-          innovation, we’re committed to helping you achieve your business
-          goals. From startups to established enterprises, our expertise ensures
-          success at every stage.
+          At AugWell Technologies, we transform ideas into impactful solutions.
+          With a proven track record of delivering measurable results and
+          driving innovation, we’re committed to helping you achieve your
+          business goals. From startups to established enterprises, our
+          expertise ensures success at every stage.
         </p>
         <CustomButton
           // would lead to testimonials in the future

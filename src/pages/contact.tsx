@@ -50,7 +50,7 @@ const RequestQuotation = () => {
 
     const data_to_send = {
       ...data,
-      subject: "New Quotation Request - Innovation Hub",
+      subject: "New Quotation Request - AugWell Technologies",
     };
 
     try {

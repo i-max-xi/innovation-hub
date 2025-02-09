@@ -16,7 +16,7 @@ const AboutUs = () => {
       <section className="about-us-content py-10 ">
         <h2 className="text-3xl font-semibold text-primary mb-6">Our Story</h2>
         <p className="text-sm lg:text-lg text-gray-700">
-          At Innovation Hub, we believe in the power of innovation and
+          At AugWell Technologies, we believe in the power of innovation and
           collaboration. Founded with the goal of creating a trusted marketplace
           for businesses, we have since become a leading platform for connecting
           suppliers, entrepreneurs, and enterprises. Our journey started with a
@@ -107,8 +107,8 @@ const AboutUs = () => {
           Our Achievements
         </h2>
         <p className="text-lg text-gray-700">
-          At Innovation Hub, our journey has been one of continuous growth and
-          success. Our dedication to delivering high-quality services and
+          At AugWell Technologies, our journey has been one of continuous growth
+          and success. Our dedication to delivering high-quality services and
           fostering trusted partnerships has led to numerous milestones that
           we're proud to share. Some of our key achievements include:
         </p>

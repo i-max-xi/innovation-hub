@@ -28,7 +28,7 @@ export default function NavbarComponent() {
         onMenuOpenChange={setIsMenuOpen}
         isBordered
         {...{
-          ariaLabel: "Innovation Hub Navbar",
+          ariaLabel: "AugWell Technologies Navbar",
         }}
         maxWidth="2xl"
         className="bg-white w-full"
@@ -41,8 +41,14 @@ export default function NavbarComponent() {
 
         <NavbarContent className="lg:hidden pr-3" justify="center">
           <NavbarBrand as={Link} to="/" className="flex gap-x-3">
-            <img src="/icons/logo.png" className="w-[1.3rem]" alt="logo" />
-            <p className="font-bold text-inherit uppercase">innovation hub</p>
+            <img
+              src="/icons/augwell_logo.png"
+              className="w-[1.3rem]"
+              alt="logo"
+            />
+            <p className="font-bold text-inherit uppercase">
+              AugWell Technologies
+            </p>
           </NavbarBrand>
         </NavbarContent>
 
@@ -51,8 +57,14 @@ export default function NavbarComponent() {
           justify="center"
         >
           <NavbarBrand as={Link} to="/" className="flex gap-x-3 ">
-            <img src="/icons/logo.png" className="w-[1.3rem]" alt="logo" />
-            <p className="font-bold text-inherit uppercase">innovation hub</p>
+            <img
+              src="/icons/augwell_logo.png"
+              className="w-[1.3rem]"
+              alt="logo"
+            />
+            <p className="font-bold text-inherit uppercase">
+              AugWell Technologies
+            </p>
           </NavbarBrand>
           <div className="flex w-[87%] gap-x-5 justify-center items-center">
             {menuItems.map((item, index) => (

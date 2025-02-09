@@ -12,11 +12,13 @@ const Footer = () => {
         <div className="space-y-3 flex flex-col items-center lg:items-start">
           <div className="flex items-center gap-1">
             <img
-              src="/icons/logo.png"
+              src="/icons/augwell_logo.png"
               alt="logo-white"
               className="w-[2.3rem]"
             />
-            <p className="font-bold text-inherit uppercase">innovation hub</p>
+            <p className="font-bold text-inherit uppercase">
+              AugWell Technologies
+            </p>
           </div>
           <p className="text-sm">Providing Software Solutions</p>
           <div className="flex items-center gap-x-3">
@@ -82,7 +84,7 @@ const Footer = () => {
       </div>
       <div className="w-full h-[1px] bg-black/40" />
       <div className="py-3 text-center text-xs">
-        Innovation Hub © {new Date().getFullYear()}. All Rights Reserved
+        AugWell Technologies © {new Date().getFullYear()}. All Rights Reserved
       </div>
     </footer>
   );
