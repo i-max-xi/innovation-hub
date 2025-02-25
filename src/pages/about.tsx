@@ -76,13 +76,18 @@ const AboutUs = () => {
             {
               name: "Appiah Augustine",
               role: "CEO & Founder",
-              imgSrc: "/images/austin_profile.jpg",
+              imgSrc: "/images/austin_profile.jpg"
             },
             {
               name: "Appiah Maxwell",
               role: "Co-Founder & Lead Engineer",
-              imgSrc: "/images/max-profile.jpg",
+              imgSrc: "/images/max-profile.jpg"
             },
+            {
+              name: "Razak Solomon",
+              role: "Software Engineer",
+              imgSrc: "/images/solo-profile.jpg"
+            }
           ].map((member, index) => (
             <div
               key={index}

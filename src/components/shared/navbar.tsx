@@ -6,7 +6,7 @@ import {
   NavbarItem,
   NavbarMenuToggle,
   NavbarMenu,
-  NavbarMenuItem,
+  NavbarMenuItem
 } from "@nextui-org/react";
 import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
@@ -28,7 +28,7 @@ export default function NavbarComponent() {
         onMenuOpenChange={setIsMenuOpen}
         isBordered
         {...{
-          ariaLabel: "AugWell Technologies Navbar",
+          ariaLabel: "AugWell Technologies Navbar"
         }}
         maxWidth="2xl"
         className="bg-white w-full"
@@ -46,9 +46,7 @@ export default function NavbarComponent() {
               className="w-[1.3rem]"
               alt="logo"
             />
-            <p className="font-bold text-inherit uppercase">
-              AugWell Technologies
-            </p>
+            <p className="font-bold text-sm uppercase">AugWell Technologies</p>
           </NavbarBrand>
         </NavbarContent>
 
@@ -153,20 +151,20 @@ export default function NavbarComponent() {
 const menuItems = [
   {
     link: "/",
-    title: "Home",
+    title: "Home"
   },
   {
     link: "/about-us",
-    title: "About Us",
+    title: "About Us"
   },
   {
     link: "/services",
-    title: "Our Services",
+    title: "Our Services"
   },
   {
     link: "/products",
-    title: "Products",
-  },
+    title: "Products"
+  }
 
   // {
   //   link: "/our-work",

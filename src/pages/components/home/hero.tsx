@@ -61,12 +61,12 @@ const HeroSection = () => {
             initial={{ scale: 1 }}
             animate={{
               scale: [1, 1.2, 1],
-              x: [0, -5, 5, -5, 5, 0], // Shake effect
+              x: [0, -5, 5, -5, 5, 0] // Shake effect
             }}
             transition={{
               delay: 1.5, // Trigger after all animations
               duration: 0.8, // Total duration of scale and shake
-              ease: "easeInOut",
+              ease: "easeInOut"
             }}
           >
             <CustomButton
@@ -110,7 +110,7 @@ const HeroSection = () => {
         <Icon icon="bx:bx-check" className="text-primary" />
       </motion.div>
       <motion.div
-        className=" absolute lg:bottom-[10%] lg:right-1/4 left-10 bottom-[30%]"
+        className=" absolute lg:bottom-[10%] lg:right-1/4 left-10 bottom-[10%]"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.7, duration: 0.6 }}
