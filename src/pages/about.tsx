@@ -2,7 +2,7 @@ import JoinUs from "./components/shared/join-us";
 
 const AboutUs = () => {
   return (
-    <main className="mt-4 md:mt-6 container mx-auto">
+    <main className="mt-4 md:mt-6  mx-auto">
       <section className="hero-section py-10 text-center ">
         <h1 className="text-2xl lg:text-5xl font-bold text-primary mb-4">
           About Us
@@ -13,8 +13,10 @@ const AboutUs = () => {
         </p>
       </section>
 
-      <section className="about-us-content py-10 ">
-        <h2 className="text-3xl font-semibold text-primary mb-6">Our Story</h2>
+      <section className="about-us-content py-10 container">
+        <h2 className="lg:text-3xl text-lg font-semibold text-primary mb-6">
+          Our Story
+        </h2>
         <p className="text-sm lg:text-lg text-gray-700">
           At AugWell Technologies, we believe in the power of innovation and
           collaboration. Founded with the goal of creating a trusted marketplace
@@ -27,8 +29,8 @@ const AboutUs = () => {
         </p>
       </section>
 
-      <section className="mission-section py-10 ">
-        <h2 className="text-3xl font-semibold text-primary mb-6">
+      <section className="mission-section py-10 container ">
+        <h2 className="lg:text-3xl text-lg font-semibold text-primary mb-6">
           Our Mission
         </h2>
         <p className="text-lg text-gray-700">
@@ -41,8 +43,8 @@ const AboutUs = () => {
         </p>
       </section>
 
-      <section className=" py-10 ">
-        <h2 className="text-3xl font-semibold text-primary mb-6">
+      <section className=" py-10 container ">
+        <h2 className="lg:text-3xl text-lg font-semibold text-primary mb-6">
           Our Core Values
         </h2>
         <ul className="space-y-4">
@@ -67,8 +69,8 @@ const AboutUs = () => {
         </ul>
       </section>
 
-      <section className="team-section py-10 ">
-        <h2 className="text-3xl font-semibold text-primary mb-6">
+      <section className="team-section py-10 container ">
+        <h2 className="lg:text-3xl text-lg font-semibold text-primary mb-6">
           Meet the Team
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -107,8 +109,8 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <section className="achievements-section py-10 bg-white px-5 md:px-20">
-        <h2 className="text-3xl font-semibold text-primary mb-6">
+      <section className="achievements-section py-10  bg-white px-5 md:px-20">
+        <h2 className="lg:text-3xl text-lg font-semibold text-primary mb-6">
           Our Achievements
         </h2>
         <p className="text-lg text-gray-700">
