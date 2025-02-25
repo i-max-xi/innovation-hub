@@ -17,7 +17,7 @@ function App() {
   const { scrollYProgress } = useScroll();
 
   return (
-    <main className="bg-background h-full w-full text-base font-roboto">
+    <main className="bg-white h-full w-full text-base font-roboto">
       <div>
         <motion.div
           style={{ scaleX: scrollYProgress }}
