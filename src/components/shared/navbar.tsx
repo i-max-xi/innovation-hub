@@ -86,7 +86,7 @@ export default function NavbarComponent() {
 
         <NavbarContent justify="end" className="hidden lg:flex">
           <NavbarItem className=" gap-x-10 hidden lg:flex">
-            <p className="flex gap-2 items-center">
+            {/* <p className="flex gap-2 items-center">
               <Icon icon="ph:phone-call-light" fontSize={24} />
               <a
                 href="tel:0247902288"
@@ -94,7 +94,7 @@ export default function NavbarComponent() {
               >
                 +233 24 790 2288
               </a>
-            </p>
+            </p> */}
             <CustomButton
               onClick={() => navigate("/contact")}
               className="bg-primary text-white"
