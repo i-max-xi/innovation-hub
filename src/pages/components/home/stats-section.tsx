@@ -7,7 +7,9 @@ const StatsSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.5 }); // Change to true if you want the animation only once
 
   return (
-    <section
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       ref={ref}
       className="bg-[#4C7F64] p-5 md:p-20 my-16 w-full text-primary-text-white relative overflow-hidden"
     >
@@ -17,29 +19,27 @@ const StatsSection = () => {
             {
               value: 15,
               suffix: "+",
-              description: "Projects Delivered",
+              description: "Projects Delivered"
             },
             {
               value: 500,
               suffix: "+",
-              description: "Happy Customers",
+              description: "Happy Customers"
             },
             {
               value: 28,
               suffix: "",
-              description: "Qualified Team Members",
+              description: "Qualified Team Members"
             },
             {
               value: 220,
               suffix: "+",
-              description: "Monthly Orders",
-            },
+              description: "Monthly Orders"
+            }
           ].map((item, index) => (
             <motion.div
               key={index}
               className="bg-[#5F9779] p-6 rounded-lg flex flex-col items-center justify-center"
-              initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.8, delay: index * 0.3 }}
             >
               <p className="font-light text-center lg:text-5xl text-3xl text-white">
@@ -68,7 +68,7 @@ const StatsSection = () => {
         alt="transparent bubbles background"
         className="absolute left-0 top-0 z-0 object-cover w-full h-full mix-blend-multiply"
       /> */}
-    </section>
+    </motion.section>
   );
 };
 
