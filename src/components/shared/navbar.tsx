@@ -43,7 +43,7 @@ export default function NavbarComponent() {
           <NavbarBrand as={Link} to="/" className="flex gap-x-3">
             <img
               src="/icons/augwell_logo.png"
-              className="w-[2.3rem]"
+              className="w-[6.3rem]"
               alt="logo"
             />
             {/* <p className="font-bold text-sm uppercase">Augwell Technologies</p> */}
