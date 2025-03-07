@@ -69,7 +69,7 @@ const AboutUs = () => {
         </ul>
       </section>
 
-      <section className="team-section py-10 container ">
+      <section className="team-section py-10 container hidden">
         <h2 className="lg:text-3xl text-lg font-semibold text-primary mb-6">
           Meet the Team
         </h2>

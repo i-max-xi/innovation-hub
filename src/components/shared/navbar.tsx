@@ -137,7 +137,7 @@ export default function NavbarComponent() {
                 navigate("/contact");
                 setIsMenuOpen(false);
               }}
-              className="bg-primary text-white"
+              className="bg-secondary text-white"
             >
               Request Quotation
             </CustomButton>
