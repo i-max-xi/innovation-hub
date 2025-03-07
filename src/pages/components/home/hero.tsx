@@ -32,7 +32,7 @@ const HeroSection = () => {
         >
           Build Your Business Fast <br className="hidden lg:block" /> and{" "}
           <motion.span
-            className="border-b-4 border-green-600 rotate-6 inline-block"
+            className="border-b-4 border-[#2479EA] rotate-6 inline-block"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.7, duration: 0.5 }}
@@ -71,7 +71,7 @@ const HeroSection = () => {
           >
             <CustomButton
               onClick={() => navigate("/contact")}
-              className="rounded-md bg-primary text-white px-4 py-2"
+              className="rounded-md bg-secondary text-white px-4 py-2"
             >
               Request Quotation
             </CustomButton>
@@ -110,7 +110,7 @@ const HeroSection = () => {
         <Icon icon="bx:bx-check" className="text-primary" />
       </motion.div>
       <motion.div
-        className=" absolute lg:bottom-[10%] lg:right-1/4 left-10 bottom-[30%]"
+        className=" absolute lg:bottom-[10%] lg:right-1/4 left-10 bottom-[20%]"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.7, duration: 0.6 }}

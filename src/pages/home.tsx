@@ -8,7 +8,7 @@ import JoinUs from "./components/shared/join-us";
 const Home = () => {
   return (
     <main className="mt-4 md:mt-8">
-      <section className="flex justify-center items-center justify-self-center h-[50vh] lg:h-[95vh]">
+      <section className="flex justify-center items-center justify-self-center h-[70vh] lg:h-[95vh]">
         <HeroSection />
       </section>
 

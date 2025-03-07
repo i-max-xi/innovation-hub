@@ -9,7 +9,7 @@ interface IconHeadedListProps {
 export const IconHeadedList = ({
   icon,
   title,
-  description,
+  description
 }: IconHeadedListProps) => {
   return (
     <div className="flex flex-col items-center  p-4">
@@ -17,7 +17,7 @@ export const IconHeadedList = ({
         <Icon
           icon={icon}
           fontSize={40}
-          className="text-[#619B7D] w-10 h-10"
+          className="text-primary w-10 h-10"
           style={{ strokeWidth: 1 }}
         />
       </div>

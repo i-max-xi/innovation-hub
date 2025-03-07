@@ -12,7 +12,7 @@ const supportSchema = z.object({
   name: z.string().min(1, "Your name is required."),
   email: z.string().email("Please enter a valid email address."),
   phone: z.string().optional(),
-  message: z.string().optional(),
+  message: z.string().optional()
 });
 
 type RequestFormData = z.infer<typeof supportSchema>;
@@ -22,12 +22,12 @@ const Support = () => {
     control,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors }
   } = useForm<RequestFormData>({
     resolver: zodResolver(supportSchema),
     defaultValues: {
-      phone: "",
-    },
+      phone: ""
+    }
   });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -38,7 +38,7 @@ const Support = () => {
 
     const data_to_send = {
       ...data,
-      subject: "Support needed - AugWell Technologies",
+      subject: "Support needed - Augwell Technologies"
     };
 
     try {
@@ -47,9 +47,9 @@ const Support = () => {
       await fetch(variables.formspree, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
-        body: JSON.stringify(data_to_send),
+        body: JSON.stringify(data_to_send)
       });
 
       reset(),

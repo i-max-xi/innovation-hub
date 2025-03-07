@@ -18,7 +18,7 @@ const AboutUs = () => {
           Our Story
         </h2>
         <p className="text-sm lg:text-lg text-gray-700">
-          At AugWell Technologies, we believe in the power of innovation and
+          At Augwell Technologies, we believe in the power of innovation and
           collaboration. Founded with the goal of creating a trusted marketplace
           for businesses, we have since become a leading platform for connecting
           suppliers, entrepreneurs, and enterprises. Our journey started with a
@@ -114,7 +114,7 @@ const AboutUs = () => {
           Our Achievements
         </h2>
         <p className="text-lg text-gray-700">
-          At AugWell Technologies, our journey has been one of continuous growth
+          At Augwell Technologies, our journey has been one of continuous growth
           and success. Our dedication to delivering high-quality services and
           fostering trusted partnerships has led to numerous milestones that
           we're proud to share. Some of our key achievements include:

@@ -14,7 +14,7 @@ const FancySection = () => {
             <p>Projects Delivered</p>
           </div>
         </Card>
-        <Card className="shadow-lg lg:p-3 p-2 transform rotate-1   bg-white hover:shadow-md  text-black hover:scale-105 hover:rotate-1 transition-all duration-300 ">
+        <Card className="shadow-lg lg:p-3 p-2 transform rotate-1   bg-gray-100 hover:shadow-md  text-black hover:scale-105 hover:rotate-1 transition-all duration-300 ">
           <div className="flex justify-between">
             <p>$1M</p>
             <p>Client Revenue Growth</p>
@@ -30,7 +30,7 @@ const FancySection = () => {
       >
         <TitleText title="Your Growth, Our Commitment" />
         <p className="text-xs md:text-sm">
-          At AugWell Technologies, we transform ideas into impactful solutions.
+          At Augwell Technologies, we transform ideas into impactful solutions.
           With a proven track record of delivering measurable results and
           driving innovation, we’re committed to helping you achieve your
           business goals. From startups to established enterprises, our

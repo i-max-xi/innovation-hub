@@ -4,21 +4,18 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 
 const Footer = () => {
   return (
-    <footer
-      id="footer"
-      className="bg-primary text-primary-white relative h-full"
-    >
+    <footer id="footer" className="bg-black text-primary-white relative h-full">
       <div className="container py-10 md:py-16 lg:grid grid-cols-[0.4fr,1fr,0.4fr] gap-x-5">
         <div className="space-y-3 flex flex-col items-center lg:items-start">
           <div className="flex items-center gap-1">
             <img
-              src="/icons/augwell_logo.png"
+              src="/icons/augwell_logo_white.png"
               alt="logo-white"
-              className="w-[2.3rem]"
+              className="w-[8.3rem]"
             />
-            <p className="font-bold text-inherit uppercase">
-              AugWell Technologies
-            </p>
+            {/* <p className="font-bold text-inherit uppercase">
+              Augwell Technologies
+            </p> */}
           </div>
           <p className="text-sm">Providing Software Solutions</p>
           <div className="flex items-center gap-x-3">
@@ -60,7 +57,7 @@ const Footer = () => {
               trigger:
                 " py-0 data-[hover=true]:bg-default-100  rounded-lg h-10 flex items-center",
               indicator: "text-medium",
-              content: "text-small  text-white",
+              content: "text-small  text-white"
             }}
             isCompact
           >
@@ -84,7 +81,7 @@ const Footer = () => {
       </div>
       <div className="w-full h-[1px] bg-black/40" />
       <div className="py-3 text-center text-xs">
-        AugWell Technologies © {new Date().getFullYear()}. All Rights Reserved
+        Augwell Technologies © {new Date().getFullYear()}. All Rights Reserved
       </div>
     </footer>
   );
@@ -95,20 +92,20 @@ export default Footer;
 const socials = [
   {
     icon: "bi:facebook",
-    href: "",
+    href: ""
   },
   {
     icon: "bi:instagram",
-    href: "",
+    href: ""
   },
   {
     icon: "simple-icons:linkedin",
-    href: "",
+    href: ""
   },
   {
     icon: "fa-brands:youtube",
-    href: "",
-  },
+    href: ""
+  }
 ];
 
 const FOOTER_ITEMS = [
@@ -117,31 +114,31 @@ const FOOTER_ITEMS = [
     links: [
       {
         title: "About Us",
-        href: "/about-us",
+        href: "/about-us"
       },
       {
         title: "Our Services",
-        href: "/services",
+        href: "/services"
       },
       {
         title: "Explore our Work",
-        href: "/products",
-      },
-    ],
+        href: "/products"
+      }
+    ]
   },
   {
     header: "Help",
     links: [
       {
         title: "Contact Us",
-        href: "/support",
-      },
+        href: "/support"
+      }
       // {
       //   title: "Pricing",
       //   href: "",
       // },
-    ],
-  },
+    ]
+  }
   // {
   //   header: "Proxy",
   //   links: [

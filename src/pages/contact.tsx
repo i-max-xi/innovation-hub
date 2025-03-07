@@ -17,7 +17,7 @@ const requestQuotationSchema = z.object({
   name: z.string().min(1, "Your name is required."),
   email: z.string().email("Please enter a valid email address."),
   phone: z.string().optional(),
-  message: z.string().optional(),
+  message: z.string().optional()
 });
 
 type RequestFormData = z.infer<typeof requestQuotationSchema>;
@@ -25,8 +25,8 @@ type RequestFormData = z.infer<typeof requestQuotationSchema>;
 const servicesOptions = [
   ...services.map((service) => ({
     label: service.title,
-    value: service.title,
-  })),
+    value: service.title
+  }))
 ];
 
 const RequestQuotation = () => {
@@ -34,12 +34,12 @@ const RequestQuotation = () => {
     control,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors }
   } = useForm<RequestFormData>({
     resolver: zodResolver(requestQuotationSchema),
     defaultValues: {
-      phone: "",
-    },
+      phone: ""
+    }
   });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -50,7 +50,7 @@ const RequestQuotation = () => {
 
     const data_to_send = {
       ...data,
-      subject: "New Quotation Request - AugWell Technologies",
+      subject: "New Quotation Request - Augwell Technologies"
     };
 
     try {
@@ -59,9 +59,9 @@ const RequestQuotation = () => {
       await fetch(variables.formspree, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
-        body: JSON.stringify(data_to_send),
+        body: JSON.stringify(data_to_send)
       });
 
       reset(),

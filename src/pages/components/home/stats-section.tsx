@@ -4,14 +4,14 @@ import { useRef } from "react";
 
 const StatsSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.5 }); // Change to true if you want the animation only once
+  const isInView = useInView(ref, { once: true, amount: 0.2 }); // Change to true if you want the animation only once
 
   return (
     <motion.section
       initial={{ opacity: 0 }}
-      animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+      whileInView={isInView ? { opacity: 1 } : { opacity: 0 }}
       ref={ref}
-      className="bg-[#4C7F64] p-5 md:p-20 my-16 w-full text-primary-text-white relative overflow-hidden"
+      className="bg-primary p-5 md:p-20 my-16 w-full text-primary-text-white relative overflow-hidden"
     >
       <div className="container mx-auto relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 relative">
@@ -39,7 +39,7 @@ const StatsSection = () => {
           ].map((item, index) => (
             <motion.div
               key={index}
-              className="bg-[#5F9779] p-6 rounded-lg flex flex-col items-center justify-center"
+              className="bg-secondary/15 p-6 rounded-lg flex flex-col items-center justify-center"
               transition={{ duration: 0.8, delay: index * 0.3 }}
             >
               <p className="font-light text-center lg:text-5xl text-3xl text-white">

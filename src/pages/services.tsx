@@ -28,10 +28,10 @@ const Services = () => {
             <Icon
               icon={service.icon}
               fontSize={40}
-              className="text-[#97b8a7] w-10 h-10"
+              className="text-primary w-10 h-10"
               style={{ strokeWidth: 1 }}
             />
-            <h3 className="text-lg font-semibold text-primary mb-4">
+            <h3 className="text-lg font-semibold text-black mb-4">
               {service.title}
             </h3>
             <p className="text-gray-600">{service.description}</p>

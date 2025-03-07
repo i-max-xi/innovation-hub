@@ -14,9 +14,9 @@ const LazyPageWrapper = ({ component }: ILazyPageWrapper) => {
             <img
               src="/icons/augwell_logo.png"
               alt="logo"
-              className="w-[2rem] aspect-square"
+              className="w-[8rem] h-auto "
             />
-            <p className="text-sm">AugWell Technologies</p>
+            {/* <p className="text-sm">Augwell Technologies</p> */}
             <Spinner size="sm" color="current" />
           </div>
         </div>

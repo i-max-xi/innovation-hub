@@ -28,7 +28,7 @@ export default function NavbarComponent() {
         onMenuOpenChange={setIsMenuOpen}
         isBordered
         {...{
-          ariaLabel: "AugWell Technologies Navbar"
+          ariaLabel: "Augwell Technologies Navbar"
         }}
         maxWidth="2xl"
         className="bg-white w-full"
@@ -43,10 +43,10 @@ export default function NavbarComponent() {
           <NavbarBrand as={Link} to="/" className="flex gap-x-3">
             <img
               src="/icons/augwell_logo.png"
-              className="w-[1.3rem]"
+              className="w-[2.3rem]"
               alt="logo"
             />
-            <p className="font-bold text-sm uppercase">AugWell Technologies</p>
+            {/* <p className="font-bold text-sm uppercase">Augwell Technologies</p> */}
           </NavbarBrand>
         </NavbarContent>
 
@@ -57,12 +57,12 @@ export default function NavbarComponent() {
           <NavbarBrand as={Link} to="/" className="flex gap-x-3 ">
             <img
               src="/icons/augwell_logo.png"
-              className="w-[1.3rem]"
+              className="w-[8.3rem]"
               alt="logo"
             />
-            <p className="font-bold text-inherit uppercase">
-              AugWell Technologies
-            </p>
+            {/* <p className="font-bold text-inherit uppercase">
+              Augwell Technologies
+            </p> */}
           </NavbarBrand>
           <div className="flex w-[87%] gap-x-5 justify-center items-center">
             {menuItems.map((item, index) => (
@@ -72,7 +72,7 @@ export default function NavbarComponent() {
                   className={({ isActive }) =>
                     `w-full text-sm text-[#1A1A1A] ${
                       isActive
-                        ? "text-primary border-b-3 border-primary"
+                        ? "text-black border-b-3 border-primary"
                         : "text-[#1A1A1A]"
                     }`
                   }
@@ -97,7 +97,7 @@ export default function NavbarComponent() {
             </p> */}
             <CustomButton
               onClick={() => navigate("/contact")}
-              className="bg-primary text-white"
+              className="bg-secondary text-white"
             >
               Request Quotation
             </CustomButton>
@@ -110,9 +110,9 @@ export default function NavbarComponent() {
               <NavLink
                 onClick={() => setIsMenuOpen(false)}
                 className={({ isActive }) =>
-                  `w-full text-sm text-[#1A1A1A] hover:border-b-2 border-primary ${
+                  `w-full text-sm text-[#1A1A1A] hover:border-b-2 border-secondary ${
                     isActive
-                      ? "text-primary border-b-3 border-primary"
+                      ? "text-black border-b-3 border-secondary"
                       : "text-[#1A1A1A]"
                   }`
                 }
@@ -123,7 +123,7 @@ export default function NavbarComponent() {
             </NavbarMenuItem>
           ))}
           <div className="flex md:gap-x-4 flex-col gap-4">
-            <p className="flex gap-2 items-center">
+            <p className=" gap-2 items-center hidden">
               <Icon icon="ph:phone-call-light" fontSize={24} />
               <a
                 href="tel:0247902288"
