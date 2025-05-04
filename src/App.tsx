@@ -1,23 +1,23 @@
-import { lazy } from "react";
-import { Toaster } from "react-hot-toast";
-import { Route, Routes } from "react-router-dom";
+import { lazy } from 'react';
+import { Toaster } from 'react-hot-toast';
+import { Route, Routes } from 'react-router-dom';
 
-import ScrollToTop from "./components/shared/scroll_to_top";
-import { motion, useScroll } from "framer-motion";
-import MainLayout from "./layout/main_layout";
-import NotFound from "./components/shared/not_found";
-const Home = lazy(() => import("./pages/home"));
-const Services = lazy(() => import("./pages/services"));
-const AboutUs = lazy(() => import("./pages/about"));
-const Product = lazy(() => import("./pages/products"));
-const Contact = lazy(() => import("./pages/contact"));
-const Support = lazy(() => import("./pages/support"));
+import ScrollToTop from './components/shared/scroll_to_top';
+import { motion, useScroll } from 'framer-motion';
+import MainLayout from './layout/main_layout';
+import NotFound from './components/shared/not_found';
+const Home = lazy(() => import('./pages/home'));
+const Services = lazy(() => import('./pages/services'));
+const AboutUs = lazy(() => import('./pages/about'));
+const Product = lazy(() => import('./pages/products'));
+const Contact = lazy(() => import('./pages/contact'));
+const Support = lazy(() => import('./pages/support'));
 
 function App() {
   const { scrollYProgress } = useScroll();
 
   return (
-    <main className="bg-white h-full w-full text-base font-roboto">
+    <main className="bg-[#f8f8f8] dark:bg-[#1a1a1a] h-full w-full text-base font-roboto">
       <div>
         <motion.div
           style={{ scaleX: scrollYProgress }}
