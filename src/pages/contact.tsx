@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 import { useEffect, useRef, useState } from 'react';
 import { variables } from '@/utils/env';
 import { services } from '@/utils/data/services.data';
-import { PopupButton, PopupWidget } from 'react-calendly';
+import { PopupButton } from 'react-calendly';
 import { useNavigate } from 'react-router-dom';
 
 // Define Zod validation schema
@@ -143,7 +143,7 @@ const RequestQuotation = () => {
             render={({ field }) => (
               <Input
                 label="Name"
-                placeholder="Enter your full name"
+                placeholder="Enter your name"
                 isRequired
                 {...field}
                 isInvalid={Boolean(errors.name)}
@@ -226,18 +226,14 @@ const RequestQuotation = () => {
               />
             </p>
 
-            <PopupWidget
+            {/* <PopupWidget
               url="https://calendly.com/infoaugwelltech"
-              /*
-               * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
-               * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
-               */
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              
               rootElement={document.getElementById('root') as any}
               text="Click here to schedule!"
               textColor="#ffffff"
               color="#00a2ff"
-            />
+            /> */}
           </div>
 
           {/* Submit Button */}
