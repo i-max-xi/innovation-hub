@@ -159,7 +159,7 @@ const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6, duration: 1 }}
-        className="flex w-full justify-center items-center"
+        className="flex w-full justify-center items-center mb-10"
       >
         <img src={main_image} className="lg:w-[50%] w-[100%]" />
       </motion.div>

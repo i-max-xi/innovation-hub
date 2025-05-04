@@ -22,7 +22,7 @@ const PartnersSection = () => {
   const scrollingPartners = [...partners];
 
   return (
-    <section className=" mt-5 mb-3 md:mb-10 flex flex-col gap-6 overflow-hidden flex-1 max-w-[100vw]">
+    <section className=" mt-5 mb-3 md:mb-10 flex flex-col gap-6 overflow-hidden flex-1 max-w-[100vw] ">
       {/* Title Section with Fade-In Animation */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
