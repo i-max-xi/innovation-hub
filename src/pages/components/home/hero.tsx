@@ -127,11 +127,11 @@ const HeroSection = () => {
         <Icon icon="la:telegram-plane" className="text-primary" />
       </motion.div> */}
 
-      <div className="container mx-auto flex gap-4 justify-center items-center mt-10">
+      {/* <div className="container mx-auto flex gap-4 justify-center items-center mt-4">
         {images.map((image, index) => (
           <motion.div
             key={index}
-            className="min-h-[15rem] min-w-[8rem]"
+            className={`w-auto ${index == 1 ? 'h-[100%]' : 'h-[40%]'}`}
             initial={{
               opacity: 0,
               scale: 0.8,
@@ -150,19 +150,29 @@ const HeroSection = () => {
             <img
               src={image}
               alt={`Image ${index + 1}`}
-              className="rounded-2xl w-full h-full object-cover border-2 border-gray-200"
+              className={`rounded-2xl h-full w-full  object-cover `}
             />
           </motion.div>
         ))}
-      </div>
+      </div> */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6, duration: 1 }}
+        className="flex w-full justify-center items-center"
+      >
+        <img src={main_image} className="lg:w-[50%] w-[100%]" />
+      </motion.div>
     </section>
   );
 };
 //image screenshots of apps, websites, and other digital products
-const images = [
-  'https://placehold.co/400',
-  'https://placehold.co/400',
-  'https://placehold.co/400',
-];
+// const images = [
+//   '/images/hero/seo.jpeg',
+//   '/images/hero/test.jpeg',
+//   '/images/hero/3d.png',
+// ];
+
+const main_image = '/images/hero/path_to_completion.png';
 
 export default HeroSection;

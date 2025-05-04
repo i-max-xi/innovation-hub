@@ -1,14 +1,18 @@
 import { motion } from 'framer-motion';
 
+const livingstone_logo = '/trusted/livingstone.png';
+const fort_knox = '/trusted/fort-knox-logo.png';
+const afroloom = '/trusted/afroloom.png';
+
 const PartnersSection = () => {
   const partners = [
-    // { name: 'afroloom', logo: 'https://www.afroloom.com/AFRO%20LOGO%204.jpg' },
-    { name: 'two', logo: 'https://placehold.co/400' },
-    { name: 'three', logo: 'https://placehold.co/400' },
-    { name: 'four', logo: 'https://placehold.co/400' },
-    { name: 'five', logo: 'https://placehold.co/400' },
-    { name: 'six', logo: 'https://placehold.co/400' },
-    { name: 'seven', logo: 'https://placehold.co/400' },
+    { name: 'afroloom', logo: afroloom },
+    { name: 'livingstone', logo: livingstone_logo },
+    { name: 'fort_knox', logo: fort_knox },
+    // { name: 'four', logo: 'https://placehold.co/400' },
+    // { name: 'five', logo: 'https://placehold.co/400' },
+    // { name: 'six', logo: 'https://placehold.co/400' },
+    // { name: 'seven', logo: 'https://placehold.co/400' },
     // { name: 'eight', logo: 'https://placehold.co/400' },
     // { name: 'nine', logo: 'https://placehold.co/400' },
     // { name: 'ten', logo: 'https://placehold.co/400' },
@@ -55,7 +59,7 @@ const PartnersSection = () => {
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="w-full h-full object-contain "
+                className="w-full h-full object-cover "
               />
             </div>
           ))}
