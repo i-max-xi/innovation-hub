@@ -1,23 +1,25 @@
-import { useForm, Controller, SubmitHandler } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { Input, Select, SelectItem, Textarea } from "@nextui-org/react";
-import { CustomButton } from "@/components/shared/shared_customs";
-import toast from "react-hot-toast";
-import { useState } from "react";
-import { variables } from "@/utils/env";
-import { services } from "@/utils/data/services.data";
+import { useForm, Controller, SubmitHandler } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+import { Input, Select, SelectItem, Textarea } from '@nextui-org/react';
+import { CustomButton } from '@/components/shared/shared_customs';
+import toast from 'react-hot-toast';
+import { useEffect, useRef, useState } from 'react';
+import { variables } from '@/utils/env';
+import { services } from '@/utils/data/services.data';
+import { PopupButton, PopupWidget } from 'react-calendly';
+import { useNavigate } from 'react-router-dom';
 
 // Define Zod validation schema
 const requestQuotationSchema = z.object({
-  // services: z
-  //   .array(z.string())
-  //   .nonempty("You must select at least one service."),
-  services: z.string().min(1, "service is required"),
-  name: z.string().min(1, "Your name is required."),
-  email: z.string().email("Please enter a valid email address."),
-  phone: z.string().optional(),
-  message: z.string().optional()
+  services: z
+    .array(z.string())
+    .nonempty('You must select at least one service.'),
+  // services: z.string().min(1, 'service is required'),
+  name: z.string().min(1, 'Your name is required.'),
+  // email: z.string().email('Please enter a valid email address.'),
+  contact: z.string().min(1),
+  message: z.string().optional(),
 });
 
 type RequestFormData = z.infer<typeof requestQuotationSchema>;
@@ -25,8 +27,8 @@ type RequestFormData = z.infer<typeof requestQuotationSchema>;
 const servicesOptions = [
   ...services.map((service) => ({
     label: service.title,
-    value: service.title
-  }))
+    value: service.title,
+  })),
 ];
 
 const RequestQuotation = () => {
@@ -34,15 +36,33 @@ const RequestQuotation = () => {
     control,
     handleSubmit,
     reset,
-    formState: { errors }
+    formState: { errors },
   } = useForm<RequestFormData>({
     resolver: zodResolver(requestQuotationSchema),
     defaultValues: {
-      phone: ""
-    }
+      contact: '',
+      services: [],
+    },
   });
 
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+  const calendlyButtonRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleCalendlyEvent = (e: MessageEvent) => {
+      if (e?.data?.event === 'calendly.event_scheduled') {
+        toast.success('Meeting booked!');
+        navigate('/');
+      }
+    };
+
+    window.addEventListener('message', handleCalendlyEvent);
+
+    return () => {
+      window.removeEventListener('message', handleCalendlyEvent);
+    };
+  }, [navigate]);
 
   // Handle form submission
   const onSubmit: SubmitHandler<RequestFormData> = async (data) => {
@@ -50,35 +70,32 @@ const RequestQuotation = () => {
 
     const data_to_send = {
       ...data,
-      subject: "New Quotation Request - Augwell Technologies"
+      subject: 'New Quotation Request - Augwell Technologies',
     };
 
     try {
       setIsLoading(true);
 
       await fetch(variables.formspree, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json"
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data_to_send)
+        body: JSON.stringify(data_to_send),
       });
 
-      reset(),
-        toast.success(
-          "Details submitted successfully, we will contact you soon!"
-        );
+      reset(), toast.success('Details submitted successfully');
+      calendlyButtonRef.current?.querySelector('button')?.click();
     } catch (error) {
       // Show error message if submission fails
-      toast.error("Failed to submit, Please try again");
+      toast.error('Failed to submit, Please try again');
     } finally {
       setIsLoading(false); // Always reset loading state, regardless of success or failure
     }
-    console.log(data);
   };
 
   return (
-    <main className="my-4 md:my-6 container mx-auto mb-10">
+    <main className="my-4 md:my-6 container mx-auto h-[70vh] ">
       <section className="hero-section py-10 text-center">
         <h1 className="text-2xl lg:text-5xl font-bold text-primary mb-4">
           Request a Quotation
@@ -97,8 +114,11 @@ const RequestQuotation = () => {
               <Select
                 label="Select the services you're interested in"
                 placeholder="Choose services"
-                multiple
-                {...field}
+                selectionMode="multiple"
+                selectedKeys={new Set(field.value)}
+                onSelectionChange={(keys) =>
+                  field.onChange(Array.from(keys as Set<string>))
+                }
                 isInvalid={Boolean(errors.services)}
               >
                 {servicesOptions.map((option) => (
@@ -109,6 +129,7 @@ const RequestQuotation = () => {
               </Select>
             )}
           />
+
           {errors.services && (
             <div className="text-red-600 text-sm">
               {errors.services.message}
@@ -134,7 +155,7 @@ const RequestQuotation = () => {
           )}
 
           {/* Contact Email Input */}
-          <Controller
+          {/* <Controller
             name="email"
             control={control}
             render={({ field }) => (
@@ -151,25 +172,25 @@ const RequestQuotation = () => {
           />
           {errors.email && (
             <div className="text-red-600 text-sm">{errors.email.message}</div>
-          )}
+          )} */}
 
           {/* phone */}
           <Controller
-            name="phone"
+            name="contact"
             control={control}
             render={({ field }) => (
               <Input
-                label="Phone"
-                placeholder="Enter phone number"
+                label="Contact"
+                placeholder="email or phone"
                 isRequired
                 {...field}
-                isInvalid={Boolean(errors.phone)}
-                errorMessage={errors.phone?.message}
+                isInvalid={Boolean(errors.contact)}
+                errorMessage={errors.contact?.message}
               />
             )}
           />
-          {errors.phone && (
-            <div className="text-red-600 text-sm">{errors.phone.message}</div>
+          {errors.contact && (
+            <div className="text-red-600 text-sm">{errors.contact.message}</div>
           )}
 
           {/* Message Textarea */}
@@ -192,6 +213,33 @@ const RequestQuotation = () => {
             <div className="text-red-600 text-sm">{errors.message.message}</div>
           )}
 
+          <div>
+            <p
+              className="hidden"
+              ref={calendlyButtonRef}
+              style={{ display: 'none' }}
+            >
+              <PopupButton
+                url="https://calendly.com/infoaugwelltech"
+                rootElement={document.getElementById('root')!}
+                text="Schedule a Meeting"
+              />
+            </p>
+
+            <PopupWidget
+              url="https://calendly.com/infoaugwelltech"
+              /*
+               * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
+               * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
+               */
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              rootElement={document.getElementById('root') as any}
+              text="Click here to schedule!"
+              textColor="#ffffff"
+              color="#00a2ff"
+            />
+          </div>
+
           {/* Submit Button */}
           <div className="mt-4 text-center">
             <CustomButton
@@ -199,7 +247,7 @@ const RequestQuotation = () => {
               className="px-6 py-3 bg-primary text-white font-semibold rounded-md"
               type="submit"
             >
-              Submit Request
+              Book a Meeting
             </CustomButton>
           </div>
         </form>

@@ -9,13 +9,13 @@ const PartnersSection = () => {
     { name: 'five', logo: 'https://placehold.co/400' },
     { name: 'six', logo: 'https://placehold.co/400' },
     { name: 'seven', logo: 'https://placehold.co/400' },
-    { name: 'eight', logo: 'https://placehold.co/400' },
-    { name: 'nine', logo: 'https://placehold.co/400' },
-    { name: 'ten', logo: 'https://placehold.co/400' },
+    // { name: 'eight', logo: 'https://placehold.co/400' },
+    // { name: 'nine', logo: 'https://placehold.co/400' },
+    // { name: 'ten', logo: 'https://placehold.co/400' },
   ];
 
   // Duplicate logos for seamless scrolling
-  const scrollingPartners = [...partners, ...partners];
+  const scrollingPartners = [...partners];
 
   return (
     <section className=" mt-5 mb-3 md:mb-10 flex flex-col gap-6 overflow-hidden flex-1 max-w-[100vw]">
@@ -50,12 +50,12 @@ const PartnersSection = () => {
           {scrollingPartners.map((partner, index) => (
             <div
               key={index}
-              className="lg:w-[8rem] lg:h-[4rem] w-[4rem] h-[2rem] flex-shrink-0"
+              className="lg:w-[8rem] lg:h-[4rem] w-[4rem] h-[2rem] flex-shrink-0 "
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain "
               />
             </div>
           ))}
