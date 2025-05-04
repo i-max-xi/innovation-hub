@@ -95,7 +95,7 @@ const RequestQuotation = () => {
   };
 
   return (
-    <main className="my-4 md:my-6 container mx-auto h-[70vh] ">
+    <main className="my-4 md:my-6 container mx-auto h-[100vh] ">
       <section className="hero-section py-10 text-center">
         <h1 className="text-2xl lg:text-5xl font-bold text-primary mb-4">
           Request a Quotation
