@@ -9,11 +9,25 @@ const Products = () => {
   const navigate = useNavigate();
   const products: ProductCardProps[] = [
     {
+      title: 'Sneakz Official',
+      services: ['Website Development'],
+      description:
+        'A fully responsive e-commerce website for a clotthing company that allows users to browse and purchase clothes',
+      display1: {
+        type: 'image',
+        render: '/images/products/sneakz-desktop.png',
+      },
+      display2: {
+        type: 'image',
+        render: '/images/products/sneakz-mobile.png',
+      },
+      link_to: 'https://www.sneaksofficial.com',
+    },
+    {
       title: 'Foundry Hub',
       services: ['Search Engine Optimization (SEO)'],
       description:
         'A successful B2B e-commerce platform optimized for search engines and user experience',
-      link_to: '',
       display1: {
         type: 'image',
         render: '/images/products/BEFORE.png',
