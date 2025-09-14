@@ -6,8 +6,11 @@ import ScrollToTop from './components/shared/scroll_to_top';
 import { motion, useScroll } from 'framer-motion';
 import MainLayout from './layout/main_layout';
 import NotFound from './components/shared/not_found';
+import FAQ from './pages/fag';
+import RequestQuotation from './pages/request-quotation';
 const Home = lazy(() => import('./pages/home'));
 const Services = lazy(() => import('./pages/services'));
+const ServiceDetail = lazy(() => import('./pages/services[id]'));
 const AboutUs = lazy(() => import('./pages/about'));
 const Product = lazy(() => import('./pages/products'));
 const Contact = lazy(() => import('./pages/contact'));
@@ -29,10 +32,13 @@ function App() {
           <Route path="/" element={<MainLayout />}>
             <Route path="" element={<Home />} />
             <Route path="services" element={<Services />} />
+            <Route path="services/:id" element={<ServiceDetail />} />
             <Route path="about-us" element={<AboutUs />} />
             <Route path="contact" element={<Contact />} />
             <Route path="products" element={<Product />} />
             <Route path="support" element={<Support />} />
+            <Route path="faq" element={<FAQ />} />
+            <Route path="request-quotation" element={<RequestQuotation />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

@@ -71,8 +71,8 @@ const HeroSection = () => {
             className="text-center  flex flex-col gap-0 justify-self-center"
           >
             <CustomButton
-              onClick={() => navigate('/contact')}
-              className="rounded-full bg-secondary text-white "
+              onClick={() => navigate('/request-quotation')}
+              className="bg-blue-800 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors duration-300"
             >
               Request Quotation
             </CustomButton>
