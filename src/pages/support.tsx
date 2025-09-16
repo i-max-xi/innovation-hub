@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 import { useState } from 'react';
 import { variables } from '@/utils/env';
 import { motion } from 'framer-motion';
-import { Icon } from '@iconify/react';
+// import { Icon } from '@iconify/react';
 
 // Define Zod validation schema
 const supportSchema = z.object({

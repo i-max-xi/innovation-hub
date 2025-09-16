@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { Icon } from '@iconify/react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 const FeaturesSection = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const features = [
     {
       icon: 'heroicons:rocket-launch',
