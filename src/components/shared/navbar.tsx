@@ -1,4 +1,4 @@
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from '@iconify/react/dist/iconify.js';
 import {
   Navbar,
   NavbarBrand,
@@ -6,11 +6,11 @@ import {
   NavbarItem,
   NavbarMenuToggle,
   NavbarMenu,
-  NavbarMenuItem
-} from "@nextui-org/react";
-import { useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import { CustomButton } from "./shared_customs";
+  NavbarMenuItem,
+} from '@nextui-org/react';
+import { useState } from 'react';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { CustomButton } from './shared_customs';
 
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,14 +28,14 @@ export default function NavbarComponent() {
         onMenuOpenChange={setIsMenuOpen}
         isBordered
         {...{
-          ariaLabel: "Augwell Technologies Navbar"
+          ariaLabel: 'Augwell Technologies Navbar',
         }}
         maxWidth="2xl"
         className="bg-white w-full"
       >
         <NavbarContent className="lg:hidden" justify="start">
           <NavbarMenuToggle
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           />
         </NavbarContent>
 
@@ -72,8 +72,8 @@ export default function NavbarComponent() {
                   className={({ isActive }) =>
                     `w-full text-sm text-[#1A1A1A] ${
                       isActive
-                        ? "text-black border-b-3 border-primary"
-                        : "text-[#1A1A1A]"
+                        ? 'text-black border-b-3 border-primary'
+                        : 'text-[#1A1A1A]'
                     }`
                   }
                 >
@@ -86,17 +86,8 @@ export default function NavbarComponent() {
 
         <NavbarContent justify="end" className="hidden lg:flex">
           <NavbarItem className=" gap-x-10 hidden lg:flex">
-            {/* <p className="flex gap-2 items-center">
-              <Icon icon="ph:phone-call-light" fontSize={24} />
-              <a
-                href="tel:0247902288"
-                className="text-[#1A1A1A] font-medium text-sm"
-              >
-                +233 24 790 2288
-              </a>
-            </p> */}
             <CustomButton
-              onClick={() => navigate("/contact")}
+              onClick={() => navigate('/request-quotation')}
               className="bg-secondary text-white"
             >
               Request Quotation
@@ -112,8 +103,8 @@ export default function NavbarComponent() {
                 className={({ isActive }) =>
                   `w-full text-sm text-[#1A1A1A] hover:border-b-2 border-secondary ${
                     isActive
-                      ? "text-black border-b-3 border-secondary"
-                      : "text-[#1A1A1A]"
+                      ? 'text-black border-b-3 border-secondary'
+                      : 'text-[#1A1A1A]'
                   }`
                 }
                 to={item.link}
@@ -123,18 +114,9 @@ export default function NavbarComponent() {
             </NavbarMenuItem>
           ))}
           <div className="flex md:gap-x-4 flex-col gap-4">
-            <p className=" gap-2 items-center hidden">
-              <Icon icon="ph:phone-call-light" fontSize={24} />
-              <a
-                href="tel:0247902288"
-                className="text-[#1A1A1A] font-medium text-sm"
-              >
-                +233 24 790 2288
-              </a>
-            </p>
             <CustomButton
               onClick={() => {
-                navigate("/contact");
+                navigate('/request-quotation');
                 setIsMenuOpen(false);
               }}
               className="bg-secondary text-white"
@@ -150,21 +132,29 @@ export default function NavbarComponent() {
 
 const menuItems = [
   {
-    link: "/",
-    title: "Home"
+    link: '/',
+    title: 'Home',
   },
   {
-    link: "/about-us",
-    title: "About Us"
+    link: '/about-us',
+    title: 'About Us',
   },
   {
-    link: "/services",
-    title: "Our Services"
+    link: '/services',
+    title: 'Our Services',
   },
   {
-    link: "/products",
-    title: "Products"
-  }
+    link: '/products',
+    title: 'Products',
+  },
+  {
+    title: 'FAQ',
+    link: '/faq',
+  },
+  {
+    title: 'Contact Us',
+    link: '/contact',
+  },
 
   // {
   //   link: "/our-work",
