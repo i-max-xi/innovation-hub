@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import { Icon } from '@iconify/react';
 import { services } from '@/utils/data/services.data';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 const ServicesShowcase = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
     <section className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
