@@ -144,7 +144,7 @@ const Products = () => {
             </p>
           </motion.div>
 
-          <div className="space-y-20">
+          <div className="space-y-20 grid grid-cols-1 md:grid-cols-2  gap-8">
             {products.map((product, index) => (
               <motion.div
                 key={index}

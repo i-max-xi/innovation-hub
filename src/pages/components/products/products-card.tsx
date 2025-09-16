@@ -92,34 +92,107 @@ const ProductCard = ({
     >
       {/* Media Section */}
       <div className="relative overflow-hidden">
-        <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600">
-          {display1?.type === 'image' ? (
-            <img
-              src={display1.render}
-              alt={title}
-              className="w-full h-full object-cover  transition-transform duration-500"
-            />
-          ) : display1?.type === 'video' ? (
-            <div className="relative w-full h-full">
-              <video
-                controls
+        {/* Single Display */}
+        {!display2 && (
+          <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600">
+            {display1?.type === 'image' ? (
+              <img
                 src={display1.render}
-                muted={true}
-                autoPlay={true}
-                loop={true}
-                className="w-full h-full object-cover"
+                alt={title}
+                className="w-full h-full object-cover transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-black/20  transition-colors duration-300"></div>
-            </div>
-          ) : (
-            <div className="w-full h-full flex items-center justify-center">
-              <Icon icon="heroicons:photo" className="text-gray-400 text-6xl" />
-            </div>
-          )}
-        </div>
+            ) : display1?.type === 'video' ? (
+              <div className="relative w-full h-full">
+                <video
+                  controls
+                  src={display1.render}
+                  muted={true}
+                  autoPlay={true}
+                  loop={true}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/20 transition-colors duration-300"></div>
+              </div>
+            ) : (
+              <div className="w-full h-full flex items-center justify-center">
+                <Icon
+                  icon="heroicons:photo"
+                  className="text-gray-400 text-6xl"
+                />
+              </div>
+            )}
+          </div>
+        )}
 
-        {/* Overlay Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        {/* Two Displays Side by Side */}
+        {display2 && (
+          <div className="flex flex-col md:flex-row gap-2 p-2 bg-gray-50 dark:bg-gray-700">
+            {/* First Display */}
+            <div className="flex-1 aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 rounded-lg overflow-hidden">
+              {display1?.type === 'image' ? (
+                <img
+                  src={display1.render}
+                  alt={`${title} - View 1`}
+                  className="w-full h-full object-cover transition-transform duration-500"
+                />
+              ) : display1?.type === 'video' ? (
+                <div className="relative w-full h-full">
+                  <video
+                    controls
+                    src={display1.render}
+                    muted={true}
+                    autoPlay={true}
+                    loop={true}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/20 transition-colors duration-300"></div>
+                </div>
+              ) : (
+                <div className="w-full h-full flex items-center justify-center">
+                  <Icon
+                    icon="heroicons:photo"
+                    className="text-gray-400 text-4xl"
+                  />
+                </div>
+              )}
+            </div>
+
+            {/* Second Display */}
+            <div className="flex-1 aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 rounded-lg overflow-hidden">
+              {display2.type === 'image' ? (
+                <img
+                  src={display2.render}
+                  alt={`${title} - View 2`}
+                  className="w-full h-full object-contain transition-transform duration-500"
+                />
+              ) : display2.type === 'video' ? (
+                <div className="relative w-full h-full">
+                  <video
+                    controls
+                    src={display2.render}
+                    muted={true}
+                    autoPlay={true}
+                    loop={true}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/20 transition-colors duration-300"></div>
+                </div>
+              ) : (
+                <div className="w-full h-full flex items-center justify-center">
+                  <Icon
+                    icon="heroicons:photo"
+                    className="text-gray-400 text-4xl"
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Overlay Gradient - Only for single display */}
+        {!display2 && (
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        )}
 
         {/* Service Badges Overlay */}
         <div className="absolute top-4 left-4 flex flex-wrap gap-2">
@@ -185,7 +258,7 @@ const ProductCard = ({
         </div>
 
         {/* Action Button */}
-        {link_to && (
+        {link_to ? (
           <motion.button
             onClick={() => window.open(link_to, '_blank')}
             whileHover={{ scale: 1.02 }}
@@ -198,31 +271,10 @@ const ProductCard = ({
               className="text-sm group-hover/btn:translate-x-1 transition-transform duration-300"
             />
           </motion.button>
+        ) : (
+          <div className=""></div>
         )}
       </div>
-
-      {/* Second Display (if exists) - Hidden by default, can be shown on hover or click */}
-      {display2 && (
-        <div className="absolute inset-0 bg-white dark:bg-gray-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-          <div className="p-6 h-full flex items-center justify-center">
-            <div className="w-full max-w-xs">
-              {display2.type === 'image' ? (
-                <img
-                  src={display2.render}
-                  alt={`${title} - Additional View`}
-                  className="w-full h-auto rounded-lg shadow-lg"
-                />
-              ) : display2.type === 'video' ? (
-                <video
-                  controls
-                  src={display2.render}
-                  className="w-full h-auto rounded-lg shadow-lg"
-                />
-              ) : null}
-            </div>
-          </div>
-        </div>
-      )}
     </motion.div>
   );
 };
