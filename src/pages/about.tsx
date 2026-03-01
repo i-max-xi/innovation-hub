@@ -15,14 +15,14 @@ const AboutUs = () => {
       icon: 'heroicons:sparkles',
       title: 'Innovation',
       description:
-        'Constantly evolving, we aim to bring innovative solutions that address the unique needs of businesses.',
+        'We build innovative software and tools that address the unique needs of businesses and make lives easier.',
       color: 'from-purple-500 to-pink-500',
     },
     {
       icon: 'heroicons:star',
       title: 'Excellence',
       description:
-        'We strive for excellence in every aspect of our business, ensuring quality products and exceptional service.',
+        'We strive for excellence in every aspect of our business, ensuring quality software and exceptional service.',
       color: 'from-yellow-500 to-orange-500',
     },
     {
@@ -90,8 +90,8 @@ const AboutUs = () => {
               Empowering Innovation
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              Empowering businesses to grow and succeed through innovative
-              solutions and trusted partnerships.
+              We empower businesses with software that helps them grow, reach
+              more people, and build innovative tools that make lives easier.
             </p>
           </motion.div>
         </div>
@@ -113,18 +113,16 @@ const AboutUs = () => {
                 Building the Future, One Innovation at a Time
               </h2>
               <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-                At Augwell Technologies, we believe in the power of innovation
-                and collaboration. Founded with the goal of creating a trusted
-                marketplace for businesses, we have since become a leading
-                platform for connecting suppliers, entrepreneurs, and
-                enterprises.
+                At Augwell Technologies, we believe in the power of software to
+                transform how businesses operate. We exist to empower businesses
+                with the tools they need to grow, reach more customers, and
+                succeed in a digital world.
               </p>
               <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed mt-4">
-                Our journey started with a simple vision: to make it easier for
-                businesses to thrive by providing them with seamless access to
-                reliable suppliers and essential resources. Today, we continue
-                to drive this mission forward, empowering businesses of all
-                sizes across the globe.
+                Our journey started with a simple vision: build innovative
+                software that makes lives easier. Today we continue that
+                mission, delivering custom websites, apps, and digital solutions
+                that help businesses of all sizes thrive.
               </p>
             </motion.div>
             <motion.div
@@ -137,9 +135,8 @@ const AboutUs = () => {
                 <Icon icon="heroicons:light-bulb" className="text-5xl mb-4" />
                 <h3 className="text-2xl font-bold mb-3">Innovation First</h3>
                 <p className="text-blue-100">
-                  We're constantly exploring new technologies and methodologies
-                  to deliver cutting-edge solutions that keep our clients ahead
-                  of the curve.
+                  We build innovative software and digital tools that solve real
+                  problems and help our clients reach more people.
                 </p>
               </div>
             </motion.div>
@@ -160,20 +157,86 @@ const AboutUs = () => {
               OUR MISSION
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-              Simplifying Business Across Borders
+              Empowering Businesses with Software
             </h2>
             <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-              Our mission is to simplify the process of doing business across
-              borders. We provide businesses with easy access to high-quality
-              products, reliable suppliers, and a comprehensive platform to
-              manage their orders and payments.
-            </p>
-            <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed mt-4">
-              We are dedicated to helping entrepreneurs and enterprises grow by
-              providing solutions that streamline the trading process, increase
-              security, and foster long-term success.
+              We build and deliver software that helps businesses run better,
+              scale faster, and succeed in a digital world.
             </p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Our Credentials */}
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <p className="text-blue-600 dark:text-blue-400 text-sm font-semibold mb-3">
+              OUR CREDENTIALS
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+              Registered & Compliant
+            </h2>
+            <p className="text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Augwell Technologies is officially registered in the United
+              Kingdom and Ghana, so we can serve clients in both markets with
+              full legal standing.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg border border-blue-100 dark:border-blue-800/50 flex flex-col items-center text-center"
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6">
+                <Icon icon="twemoji:flag-united-kingdom" className="text-4xl" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                United Kingdom
+              </h3>
+              <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                Registered company operating in the UK with full compliance to
+                local regulations.
+              </p>
+              <span className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 text-sm font-semibold">
+                <Icon icon="heroicons:check-badge" className="text-lg" />
+                UK Registered
+              </span>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg border border-green-100 dark:border-green-800/50 flex flex-col items-center text-center"
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6">
+                <Icon icon="twemoji:flag-ghana" className="text-4xl" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                Ghana
+              </h3>
+              <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                Registered entity in Ghana, supporting local and regional
+                businesses with software and digital solutions.
+              </p>
+              <span className="inline-flex items-center gap-2 text-green-600 dark:text-green-400 text-sm font-semibold">
+                <Icon icon="heroicons:check-badge" className="text-lg" />
+                Ghana Registered
+              </span>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -286,10 +349,8 @@ const AboutUs = () => {
               Milestones That Define Our Journey
             </h2>
             <p className="text-base text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              At Augwell Technologies, our journey has been one of continuous
-              growth and success. Our dedication to delivering high-quality
-              services and fostering trusted partnerships has led to numerous
-              milestones that we're proud to share.
+              Our dedication to building high-quality software and helping
+              businesses grow has led to milestones we're proud to share.
             </p>
           </motion.div>
 

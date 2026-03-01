@@ -67,9 +67,9 @@ const JoinUs = () => {
             </h2>
 
             <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
-              Together, we can build a world where businesses thrive through
-              trusted partnerships and seamless trading solutions. Let's create
-              something extraordinary.
+              Together we can build software that helps businesses grow, reach
+              more people, and make lives easier. Let's create something
+              extraordinary.
             </p>
           </motion.div>
 
