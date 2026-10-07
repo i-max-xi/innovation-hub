@@ -6,7 +6,7 @@ import { CustomButton } from '@/components/shared/shared_customs';
 import toast from 'react-hot-toast';
 import { useState } from 'react';
 import { variables } from '@/utils/env';
-import { motion } from 'framer-motion';
+import { inquiryInputClasses, inquirySubmitClass } from '@/components/shared/inquiry-form-styles';
 // import { Icon } from '@iconify/react';
 
 // Define Zod validation schema
@@ -19,7 +19,7 @@ const supportSchema = z.object({
 
 type RequestFormData = z.infer<typeof supportSchema>;
 
-const Support = () => {
+const Support = ({ embedded = false }: { embedded?: boolean }) => {
   const {
     control,
     handleSubmit,
@@ -64,18 +64,10 @@ const Support = () => {
   };
 
   return (
-    <main className="bg-white dark:bg-gray-900">
-      {/* Contact Form Section */}
-      <section className=" bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white dark:bg-gray-700 rounded-3xl p-8 md:p-12 shadow-2xl"
-            >
-              <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
+    <section aria-labelledby="message-form-heading" className={`bg-white dark:bg-gray-900 rounded-3xl border border-gray-200 dark:border-gray-700 p-6 md:p-8 shadow-sm ${embedded ? '' : 'mx-4 md:mx-auto max-w-3xl my-12 md:my-20'}`}>
+      <h2 id="message-form-heading" className="text-2xl font-bold text-gray-900 dark:text-white">Send us a message</h2>
+      <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mt-2 mb-8">A project idea, a question, or a support request—we’re here to help.</p>
+      <form className="grid sm:grid-cols-2 gap-x-5 gap-y-6" onSubmit={handleSubmit(onSubmit)}>
                 {/* Contact Name Input */}
                 <div>
                   <Controller
@@ -83,16 +75,15 @@ const Support = () => {
                     control={control}
                     render={({ field }) => (
                       <Input
-                        label="Full Name"
+                        labelPlacement="outside"
+                        variant="bordered"
+                        label="Full name"
+                        autoComplete="name"
                         placeholder="Enter your full name"
                         isRequired
                         {...field}
                         isInvalid={Boolean(errors.name)}
-                        classNames={{
-                          label: 'text-gray-700 dark:text-gray-300 font-medium',
-                          input:
-                            'bg-gray-50 dark:bg-gray-600 border-gray-200 dark:border-gray-500 rounded-xl',
-                        }}
+                        classNames={inquiryInputClasses}
                       />
                     )}
                   />
@@ -110,7 +101,10 @@ const Support = () => {
                     control={control}
                     render={({ field }) => (
                       <Input
-                        label="Email Address"
+                        labelPlacement="outside"
+                        variant="bordered"
+                        label="Email address"
+                        autoComplete="email"
                         type="email"
                         placeholder="Enter your email address"
                         isRequired
@@ -119,11 +113,7 @@ const Support = () => {
                           errors.email ? errors.email.message : undefined
                         }
                         isInvalid={Boolean(errors.email)}
-                        classNames={{
-                          label: 'text-gray-700 dark:text-gray-300 font-medium',
-                          input:
-                            'bg-gray-50 dark:bg-gray-600 border-gray-200 dark:border-gray-500 rounded-xl',
-                        }}
+                        classNames={inquiryInputClasses}
                       />
                     )}
                   />
@@ -135,40 +125,37 @@ const Support = () => {
                 </div>
 
                 {/* Phone Input */}
-                <div>
+                <div className="sm:col-span-2">
                   <Controller
                     name="phone"
                     control={control}
                     render={({ field }) => (
                       <Input
-                        label="Phone Number (Optional)"
+                        labelPlacement="outside"
+                        variant="bordered"
+                        label="Phone number (optional)"
+                        autoComplete="tel"
                         placeholder="Enter your phone number"
                         {...field}
-                        classNames={{
-                          label: 'text-gray-700 dark:text-gray-300 font-medium',
-                          input:
-                            'bg-gray-50 dark:bg-gray-600 border-gray-200 dark:border-gray-500 rounded-xl',
-                        }}
+                        classNames={inquiryInputClasses}
                       />
                     )}
                   />
                 </div>
 
                 {/* Message Textarea */}
-                <div>
+                <div className="sm:col-span-2">
                   <Controller
                     name="message"
                     control={control}
                     render={({ field }) => (
                       <Textarea
-                        label="How can we help?"
-                        placeholder="Describe your question or support need in detail"
+                        label="How can we help? (optional)"
+                        labelPlacement="outside"
+                        variant="bordered"
+                        placeholder="Tell us about your project, question, or issue. A little context helps us respond."
                         {...field}
-                        classNames={{
-                          label: 'text-gray-700 dark:text-gray-300 font-medium',
-                          input:
-                            'bg-gray-50 dark:bg-gray-600 border-gray-200 dark:border-gray-500 rounded-xl',
-                        }}
+                        classNames={inquiryInputClasses}
                         minRows={4}
                       />
                     )}
@@ -176,24 +163,20 @@ const Support = () => {
                 </div>
 
                 {/* Submit Button */}
-                <div className="text-center pt-6">
+                <div className="sm:col-span-2 border-t border-gray-100 dark:border-gray-800 pt-6">
                   <CustomButton
                     isLoading={isLoading}
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-12 py-4 rounded-full font-semibold text-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    className={inquirySubmitClass}
                     type="submit"
                   >
                     {isLoading ? 'Sending...' : 'Send Message'}
                   </CustomButton>
-                  <p className="text-gray-500 dark:text-gray-400 text-sm mt-3">
+                  <p className="text-gray-500 dark:text-gray-400 text-xs text-center mt-3">
                     We'll respond to your message within 24 hours
                   </p>
                 </div>
-              </form>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-    </main>
+      </form>
+    </section>
   );
 };
 

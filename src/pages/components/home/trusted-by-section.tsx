@@ -5,6 +5,7 @@ const TrustedBySection = () => {
     { name: 'Fort Knox', logo: '/trusted/fort-knox-logo.png' },
     { name: 'Livingstone', logo: '/trusted/livingstone.png' },
     { name: 'Afroloom', logo: '/trusted/afroloom.png' },
+    { name: 'Odura Hope Foundation', logo: '/trusted/odura-hope-foundation.jpg', href: 'https://www.odurahopefoundation.org/' },
   ];
 
   return (
@@ -17,10 +18,10 @@ const TrustedBySection = () => {
           className="text-center mb-12"
         >
           <p className="text-gray-600 dark:text-gray-400 text-sm font-medium mb-2">
-            TRUSTED BY INDUSTRY LEADERS
+            TRUSTED BY BUSINESSES & ORGANIZATIONS
           </p>
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
-            Companies that trust us to deliver
+            Businesses and organizations that trust us
           </h2>
         </motion.div>
 
@@ -38,11 +39,14 @@ const TrustedBySection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="flex items-center justify-center"
             >
-              <img
-                src={company.logo}
-                alt={`${company.name} logo`}
-                className="h-12 md:h-16   duration-300  "
-              />
+              {company.href ? (
+                <a href={company.href} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${company.name} (opens in a new tab)`} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                  <img src={company.logo} alt={`${company.name} logo`} width="100" height="80" loading="lazy" decoding="async" className="h-16 md:h-20 w-auto object-contain rounded-lg" />
+                  <span className="text-sm font-semibold text-gray-700 dark:text-gray-200 max-w-32">{company.name}</span>
+                </a>
+              ) : (
+                <img src={company.logo} alt={`${company.name} logo`} loading="lazy" decoding="async" className="h-12 md:h-16 duration-300" />
+              )}
             </motion.div>
           ))}
         </motion.div>
