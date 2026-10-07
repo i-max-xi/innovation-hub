@@ -31,6 +31,8 @@ export default {
 
 ## Marketing page rendering
 
+Use Node.js 24 (`nvm use` reads `.nvmrc`). The `engines.node` setting in `package.json` selects Node.js 24 for Vercel builds. Keep Vercel’s Project Settings → Build and Deployment → Node.js Version set to `24.x` as well. Deploy the commit containing this setting; redeploying an older commit will not pick up the change.
+
 `npm run build` builds the Vite app and prerenders the homepage into `dist/index.html` , the services page into `dist/services/index.html`, FAQs into `dist/faq/index.html`, products into `dist/products/index.html`, and About Us into `dist/about-us/index.html` using the same React content shown in the browser. This makes the service descriptions, project links, FAQs, and JSON-LD available without JavaScript. `dist/app.html` retains the empty SPA shell for other routes; the Azure Static Web Apps and Vercel configs serve the prerendered pages at `/`, `/services`, `/faq`, `/products`, and `/about-us` and route other requests to the SPA shell. Keep that distinction when deploying to another host.
 
 Homepage content and its matching structured data live in `src/pages/components/home/conversion-content.tsx`. No client results, conversion gains, or review scores are asserted there. Measure discovery calls and quote requests after launch before judging conversion uplift.
