@@ -4,7 +4,7 @@ import { portfolioProducts } from '@/utils/data/products.data';
 import ProductCard from './components/products/products-card';
 
 export const productsTitle = 'Products & Projects | Augwell Technologies';
-export const productsDescription = 'Explore Augwell’s in-house software products and website projects, including retail tools, an insurer fraud detection demo, commerce, and a nonprofit foundation.';
+export const productsDescription = 'Explore Augwell’s in-house software products and selected client work, including e-commerce platforms, 3D customization, websites, and SEO services.';
 const schema = {
   '@context': 'https://schema.org', '@type': 'CollectionPage',
   '@id': 'https://www.augwelltech.com/products#page',
@@ -16,7 +16,7 @@ const schema = {
 };
 const groups = [
   { id: 'in-house', title: 'Products we build and run', label: 'In-house products', description: 'Our own software products address different business needs. Explore the retail platform and insurer demo below.', products: portfolioProducts.filter((p) => p.inHouse) },
-  { id: 'commerce-projects', title: 'Websites built around real needs', label: 'Selected projects', description: 'From fashion customization and B2B commerce to a nonprofit foundation, explore websites built for different audiences.', products: portfolioProducts.filter((p) => !p.inHouse) },
+  { id: 'commerce-projects', title: 'Products and services delivered for clients', label: 'Selected client work', description: 'E-commerce platforms, 3D customization, websites, and SEO. A selection of what we’ve built and delivered for businesses and organizations.', products: portfolioProducts.filter((p) => !p.inHouse) },
 ];
 
 export default function Products() {
@@ -27,7 +27,7 @@ export default function Products() {
         <div className="container mx-auto px-4">
           <p className="text-xs uppercase tracking-widest font-semibold text-blue-600 dark:text-blue-300 mb-4">Products &amp; projects</p>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight text-gray-900 dark:text-white">See what we’ve built.<br />Explore what it can do.</h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl mt-6">In-house software and website projects, each built around a different need. Explore the previews and open the available sites to see the work for yourself.</p>
+          <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl mt-6">Explore our own software products and selected products and services delivered for clients. See the work below and visit the available sites.</p>
           <nav aria-label="Portfolio sections" className="flex flex-wrap gap-3 mt-8">{groups.map((group) => <a key={group.id} href={`#${group.id}`} className="rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 px-5 py-2.5 text-sm font-semibold text-gray-700 dark:text-gray-200 hover:border-blue-400 hover:text-blue-700 dark:hover:text-blue-300">{group.label} <span className="ml-2" aria-hidden="true">↓</span></a>)}</nav>
         </div>
       </section>

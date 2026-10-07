@@ -1,6 +1,7 @@
 interface DisplayContent {
   type: 'image' | 'video';
   render: string;
+  alt?: string;
 }
 
 type ServicesType =
@@ -27,7 +28,7 @@ function ProductMedia({ content, title }: { content: DisplayContent; title: stri
   return content.type === 'video' ? (
     <video src={content.render} controls muted loop playsInline preload="none" aria-label={`${title} product demonstration`} className="w-full h-full object-contain" />
   ) : (
-    <img src={content.render} alt={title} loading="lazy" decoding="async" width="1200" height="675" className="w-full h-full object-contain" />
+    <img src={content.render} alt={content.alt || title} loading="lazy" decoding="async" width="1200" height="675" className="w-full h-full object-contain" />
   );
 }
 

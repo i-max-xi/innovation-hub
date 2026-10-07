@@ -13,7 +13,7 @@ export const faqGroups = [
     items: [
       homeFaqs[0], homeFaqs[1],
       { question: 'Do you also offer websites, SEO, branding, and 3D work?', answer: 'Yes. Business websites, search engine optimization, branding and design, and 3D modeling and visualization are available alongside software development or as a separate brief. Tell us what you need so we can discuss the scope.' },
-      { question: 'Where can I see examples of your work?', answer: 'Our Products page brings together website projects and in-house products. You can open the available project links to explore the work, including commerce platforms, a nonprofit website, and software demos.' },
+      { question: 'Where can I see examples of your work?', answer: 'Our Products page showcases our in-house products alongside selected products and services delivered for clients, including e-commerce platforms, 3D customization, websites, and SEO. Visit the available sites to explore the work.' },
     ],
   },
   {

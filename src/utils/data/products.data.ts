@@ -42,8 +42,8 @@ export const portfolioProducts: ProductCardProps[] = [
   {
     title: 'Foundry Hub', category: 'B2B e-commerce',
     services: ['Search Engine Optimization (SEO)'],
-    description: 'A B2B commerce project focused on search visibility and user experience. Explore the project images below.',
-    display1: { type: 'image', render: '/images/products/BEFORE.png' },
-    display2: { type: 'image', render: '/images/products/AFTER.png' },
+    description: 'By improving Foundry Hub’s SEO, we increased its visibility on Google and boosted conversions by 60%. The before-and-after images show its B2B marketplace moving from second to first for “foundry hub,” with its brand logo appearing in the result. Better visibility helped more buyers discover the platform and become customers.',
+    display1: { type: 'image', render: '/images/products/BEFORE.png', alt: 'Before SEO: Foundry Hub’s B2B marketplace in second position for the Google search “foundry hub,” without its brand logo.' },
+    display2: { type: 'image', render: '/images/products/AFTER.png', alt: 'After SEO: Foundry Hub’s B2B marketplace in first position for the Google search “foundry hub,” with its brand logo displayed.' },
   },
 ];

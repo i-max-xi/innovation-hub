@@ -6,13 +6,13 @@ Make Augwell easier to understand, easier to assess, and easier to contact. Supp
 
 ## Positioning and page roles
 
-The site presents two complementary activities: custom software for businesses and a growing portfolio of in-house products. Sellem is one product in that portfolio. Client website and commerce projects provide additional evidence of the work, including the Odura Hope Foundation nonprofit website.
+The site presents two complementary offers: custom software built for a client’s business and SaaS products clients can sign up for today. The About Us section presents two clear choices: “Built just for you” and “Ready to use today,” with a custom-project CTA and a SaaS-product CTA. Sellem is one product in that portfolio. Selected client work showcases products built and services delivered for businesses and organizations, including e-commerce, 3D customization, websites, and SEO.
 
 | Page | Role | Main changes |
 | --- | --- | --- |
 | Homepage | Help a visitor choose a direction | Benefit-led service cards, real product previews, delivery steps, shared FAQs, inquiry CTAs |
 | Services | Help a visitor assess fit | Who each offer is for, deliverables, scoping questions, examples, supporting services, clear next steps |
-| Products | Show the work | Separate in-house products from website and commerce projects, retain screenshots and video, use verified external links |
+| Products | Show the work | Separate in-house products from selected client products and services, retain screenshots and video, use verified external links |
 | About Us | Explain the business and build trust | Clear purpose, UK/Ghana registration information, custom projects and own products, practical working principles |
 | FAQ | Resolve common questions | Twelve answers grouped by services/products, project planning, and delivery/support |
 | Quotation | Help a visitor send a useful brief | Compact layout, clearer labels, optional details marked, explanation of the calendar step |
