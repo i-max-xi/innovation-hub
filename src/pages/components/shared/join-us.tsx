@@ -122,7 +122,7 @@ const JoinUs = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <CustomButton
                   onClick={() => navigate('/request-quotation')}
-                  className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-6 font-semibold text-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-3"
+                  className="bg-blue-700 text-white py-6 font-semibold text-lg hover:bg-blue-800 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-3"
                 >
                   <Icon icon="heroicons:rocket-launch" className="text-xl" />
                   Request Quotation

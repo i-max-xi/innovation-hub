@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Accordion, AccordionItem } from "@nextui-org/react";
-import { Icon } from "@iconify/react/dist/iconify.js";
 
 const Footer = () => {
   return (
@@ -18,25 +17,14 @@ const Footer = () => {
             </p> */}
           </div>
           <p className="text-sm">Providing Software Solutions</p>
-          <div className="flex items-center gap-x-3">
-            {socials.map((item, index) => (
-              <a
-                key={index}
-                href={item.href}
-                target="_blank"
-                className="hover:opacity-80"
-              >
-                <Icon icon={item.icon} fontSize={30} />
-              </a>
-            ))}
-          </div>
+          <a href="mailto:info@augwelltech.com" className="text-sm hover:underline">info@augwelltech.com</a>
         </div>
         <div className="hidden lg:grid grid-cols-2">
           {FOOTER_ITEMS.map((item, index) => (
             <div key={index}>
-              <h1 className="text-primary-white mb-2 text-[17px] font-medium">
+              <h2 className="text-primary-white mb-2 text-[17px] font-medium">
                 {item.header}
-              </h1>
+              </h2>
               <div className="h-[0.2rem] w-[15%] mb-2 bg-gray-200/20 rounded-full" />
               <div className="flex gap-y-1 flex-col">
                 {item.links.map((itx, idx) => (
@@ -88,25 +76,6 @@ const Footer = () => {
 };
 
 export default Footer;
-
-const socials = [
-  {
-    icon: "bi:facebook",
-    href: ""
-  },
-  {
-    icon: "bi:instagram",
-    href: ""
-  },
-  {
-    icon: "simple-icons:linkedin",
-    href: ""
-  },
-  {
-    icon: "fa-brands:youtube",
-    href: ""
-  }
-];
 
 const FOOTER_ITEMS = [
   {

@@ -1,5 +1,43 @@
 {
-	"navigationFallback": {
-		"rewrite": "/index.html"
-	}
+  "navigationFallback": {
+    "rewrite": "/app.html"
+  },
+  "routes": [
+    {
+      "route": "/",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/services",
+      "rewrite": "/services/index.html"
+    },
+    {
+      "route": "/services/",
+      "rewrite": "/services/index.html"
+    },
+    {
+      "route": "/faq",
+      "rewrite": "/faq/index.html"
+    },
+    {
+      "route": "/faq/",
+      "rewrite": "/faq/index.html"
+    },
+    {
+      "route": "/products",
+      "rewrite": "/products/index.html"
+    },
+    {
+      "route": "/products/",
+      "rewrite": "/products/index.html"
+    },
+    {
+      "route": "/about-us",
+      "rewrite": "/about-us/index.html"
+    },
+    {
+      "route": "/about-us/",
+      "rewrite": "/about-us/index.html"
+    }
+  ]
 }
